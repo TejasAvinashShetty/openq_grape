@@ -1,0 +1,1114 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{C20hugeeps10pi}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \section{Imports}\label{imports}
+
+    \subsection{Qutip imports 1}\label{qutip-imports-1}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{operators} \PY{k}{import} \PY{n}{sigmax}\PY{p}{,} \PY{n}{sigmay}\PY{p}{,} \PY{n}{sigmaz}\PY{p}{,} \PY{n}{identity}
+        \PY{c+c1}{\PYZsh{} position, momentum, num, create, destroy, commutator, qeye }
+        \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{tensor} \PY{k}{import} \PY{n}{tensor}
+        \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{qip}\PY{n+nn}{.}\PY{n+nn}{gates} \PY{k}{import} \PY{n}{swap}\PY{p}{,} \PY{n}{rx}\PY{p}{,} \PY{n}{ry}\PY{p}{,} \PY{n}{rz}
+        \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{qobj} \PY{k}{import} \PY{n}{Qobj}
+        \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{visualization} \PY{k}{import} \PY{n}{hinton}
+        \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{visualization} \PY{k}{import} \PY{n}{matrix\PYZus{}histogram\PYZus{}complex}\PY{p}{,} \PY{n}{matrix\PYZus{}histogram}
+        \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{random\PYZus{}objects} \PY{k}{import} \PY{n}{rand\PYZus{}herm}\PY{p}{,} \PY{n}{rand\PYZus{}unitary}\PY{p}{,} \PY{n}{rand\PYZus{}dm}
+\end{Verbatim}
+
+
+    \subsection{Numpy imports}\label{numpy-imports}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{from} \PY{n+nn}{numpy} \PY{k}{import} \PY{n}{sin}\PY{p}{,} \PY{n}{cos}\PY{p}{,} \PY{n}{tan}\PY{p}{,} \PY{n}{real}\PY{p}{,} \PY{n}{imag}\PY{p}{,}  \PY{n}{log}\PY{p}{,} \PY{n}{conj}
+        \PY{k+kn}{from} \PY{n+nn}{numpy} \PY{k}{import} \PY{n}{array}\PY{p}{,} \PY{n}{append}\PY{p}{,} \PY{n}{linspace}\PY{p}{,} \PY{n}{arange}
+        \PY{k+kn}{from} \PY{n+nn}{numpy} \PY{k}{import} \PY{n}{add}\PY{p}{,} \PY{n}{sqrt}\PY{p}{,} \PY{n+nb}{abs}\PY{p}{,} \PY{n}{dot}
+        \PY{k+kn}{from} \PY{n+nn}{numpy}\PY{n+nn}{.}\PY{n+nn}{random} \PY{k}{import} \PY{n}{random}\PY{p}{,} \PY{n}{random\PYZus{}sample}\PY{p}{,} \PY{n}{random}
+        \PY{k+kn}{from} \PY{n+nn}{numpy} \PY{k}{import} \PY{n}{concatenate}\PY{p}{,} \PY{n}{trace}
+        \PY{k+kn}{from} \PY{n+nn}{numpy} \PY{k}{import} \PY{n}{ones}\PY{p}{,} \PY{n}{zeros}\PY{p}{,} \PY{n}{ones\PYZus{}like}\PY{p}{,} \PY{n}{zeros\PYZus{}like}
+        \PY{k+kn}{from} \PY{n+nn}{numpy} \PY{k}{import} \PY{n}{amax}\PY{p}{,} \PY{n}{amin}\PY{p}{,} \PY{n}{nanmax}\PY{p}{,} \PY{n}{nanmin}
+        \PY{c+c1}{\PYZsh{} from numpy import pi}
+\end{Verbatim}
+
+
+    \subsection{Scipy imports}\label{scipy-imports}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{integrate} \PY{k}{import} \PY{n}{ode}\PY{p}{,} \PY{n}{odeint}\PY{p}{,} \PY{n}{complex\PYZus{}ode}
+        \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{optimize} \PY{k}{import} \PY{n}{minimize}
+        \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{linalg} \PY{k}{import} \PY{n}{eigh}\PY{p}{,} \PY{n}{inv}\PY{p}{,} \PY{n}{norm}\PY{p}{,} \PY{n}{expm}
+        \PY{c+c1}{\PYZsh{} from scipy.linalg import }
+        \PY{c+c1}{\PYZsh{} from scipy import}
+\end{Verbatim}
+
+
+    \subsection{Matplotlib imports}\label{matplotlib-imports}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{from} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{import} \PY{n}{plot}\PY{p}{,} \PY{n}{figure}\PY{p}{,} \PY{n}{show}\PY{p}{,} \PY{n}{savefig}\PY{p}{,} \PY{n}{axes}
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{import} \PY{n}{xlabel}\PY{p}{,} \PY{n}{ylabel}\PY{p}{,} \PY{n}{title}\PY{p}{,} \PY{n}{legend}
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{rcParams}
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{import} \PY{n}{style} 
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{import} \PY{n}{xlim}\PY{p}{,} \PY{n}{ylim}\PY{p}{,} \PY{n}{axis} 
+        \PY{c+c1}{\PYZsh{} beware not same as axes}
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{import} \PY{n}{subplot}\PY{p}{,} \PY{n}{subplots}\PY{p}{,} \PY{n}{text}
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{import} \PY{n}{GridSpec}
+        
+        
+        
+        \PY{n}{pgf\PYZus{}with\PYZus{}rc\PYZus{}fonts} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pgf.texsystem}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pdflatex}\PY{l+s+s2}{\PYZdq{}}\PY{p}{\PYZcb{}}
+        \PY{n}{rcParams}\PY{o}{.}\PY{n}{update}\PY{p}{(}\PY{n}{pgf\PYZus{}with\PYZus{}rc\PYZus{}fonts}\PY{p}{)}
+        \PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{seaborn\PYZhy{}whitegrid}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsection{Math imports}\label{math-imports}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{k+kn}{from} \PY{n+nn}{math} \PY{k}{import} \PY{n}{pi}
+        \PY{k+kn}{from} \PY{n+nn}{math} \PY{k}{import} \PY{n}{exp}
+\end{Verbatim}
+
+
+    \subsection{Cmath imports}\label{cmath-imports}
+
+    \subsection{Date and datetime imports}\label{date-and-datetime-imports}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{k+kn}{from} \PY{n+nn}{datetime} \PY{k}{import} \PY{n}{date}
+        \PY{k+kn}{from} \PY{n+nn}{datetime} \PY{k}{import} \PY{n}{datetime}\PY{c+c1}{\PYZsh{} now}
+\end{Verbatim}
+
+
+    \subsection{Os imports}\label{os-imports}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{k+kn}{from} \PY{n+nn}{os} \PY{k}{import} \PY{n}{getcwd}\PY{p}{,} \PY{n}{mkdir}\PY{p}{,} \PY{n}{chdir}
+        \PY{k+kn}{from} \PY{n+nn}{os}\PY{n+nn}{.}\PY{n+nn}{path} \PY{k}{import} \PY{n}{abspath}\PY{p}{,} \PY{n}{join} 
+\end{Verbatim}
+
+
+    \subsection{Sympy imports}\label{sympy-imports}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{Function}\PY{p}{,} \PY{n}{dsolve}\PY{p}{,} \PY{n}{Eq}\PY{p}{,} \PY{n}{Derivative}\PY{p}{,} \PY{n}{symbols}
+        \PY{c+c1}{\PYZsh{} x, y, z, t = symbols(\PYZsq{}x y z t\PYZsq{})}
+        \PY{c+c1}{\PYZsh{} k, m, n = symbols(\PYZsq{}k m n\PYZsq{}, integer=True)}
+        \PY{c+c1}{\PYZsh{} f, g, h = symbols(\PYZsq{}f g h\PYZsq{}, cls=Function)}
+\end{Verbatim}
+
+
+    \subsection{Miscellaneous imports}\label{miscellaneous-imports}
+
+    \subsection{Extra useful functions}\label{extra-useful-functions}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{k}{def} \PY{n+nf}{rint}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{x}\PY{p}{)}
+            \PY{k}{return} \PY{k+kc}{None}
+\end{Verbatim}
+
+
+    \section{Building parts}\label{building-parts}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:}  \PY{k}{del} \PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{total\PYZus{}time}\PY{p}{,} \PY{n}{epsilon}\PY{p}{,} 
+         \PY{n}{omega\PYZus{}1} \PY{o}{=} \PY{l+m+mf}{0.5}
+         \PY{n}{total\PYZus{}time} \PY{o}{=} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{o}{/}\PY{n}{omega\PYZus{}1}
+         \PY{n}{epsilon} \PY{o}{=} \PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{6}\PY{p}{)}
+         \PY{n}{max\PYZus{}iter} \PY{o}{=} \PY{l+m+mi}{100}
+         \PY{n}{time\PYZus{}steps} \PY{o}{=} \PY{l+m+mi}{200}
+         \PY{n}{dt} \PY{o}{=} \PY{n}{total\PYZus{}time}\PY{o}{/}\PY{n}{time\PYZus{}steps}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        NameError                                 Traceback (most recent call last)
+
+        <ipython-input-10-3e38f81848f0> in <module>()
+    ----> 1 del omega\_1, total\_time, epsilon,
+          2 omega\_1 = 0.5
+          3 total\_time = 2*pi/omega\_1
+          4 epsilon = 10**(-6)
+          5 max\_iter = 100
+
+
+        NameError: name 'omega\_1' is not defined
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{k}{del} \PY{n}{Lin}\PY{p}{,} \PY{n}{Ti}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        NameError                                 Traceback (most recent call last)
+
+        <ipython-input-11-e6d48350e5b4> in <module>()
+    ----> 1 del Lin, Ti
+    
+
+        NameError: name 'Lin' is not defined
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{Lin}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        NameError                                 Traceback (most recent call last)
+
+        <ipython-input-12-3ce5abe2615e> in <module>()
+    ----> 1 Lin
+    
+
+        NameError: name 'Lin' is not defined
+
+    \end{Verbatim}
+
+    \subsection{level 1}\label{level-1}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{k}{def} \PY{n+nf}{H1}\PY{p}{(}\PY{n}{omega\PYZus{}1}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Brief description of the function\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{H1} \PY{o}{=} \PY{n}{omega\PYZus{}1}\PY{o}{*}\PY{n}{sigmaz}\PY{p}{(}\PY{p}{)}
+             \PY{k}{return} \PY{n}{H1}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{k}{def} \PY{n+nf}{H2}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Brief description of the function\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{H2} \PY{o}{=} \PY{n}{sigmay}\PY{p}{(}\PY{p}{)}
+             \PY{k}{return} \PY{n}{H2}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{c+c1}{\PYZsh{}I = identity(2)}
+         \PY{k}{del} \PY{n}{I}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        NameError                                 Traceback (most recent call last)
+
+        <ipython-input-15-7d62117bf249> in <module>()
+          1 \#I = identity(2)
+    ----> 2 del I
+    
+
+        NameError: name 'I' is not defined
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{k}{def} \PY{n+nf}{T\PYZus{}maker}\PY{p}{(}\PY{n}{Ti}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Brief description of the function\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{T} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{n}{Ti}\PY{o}{.}\PY{n}{trans}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{Ti}\PY{p}{)}
+             \PY{k}{return} \PY{n}{T}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:}  \PY{n}{tensor}\PY{p}{(}\PY{n}{identity}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{n}{T\PYZus{}maker}\PY{p}{(}\PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}17}]:}
+    
+    Quantum object: dims = [[2, 2, 2], [2, 2, 2]], shape = (8, 8), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}0.0 & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0\\0.0 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 1.0\\0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 1.0 & 0.0\\0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 1.0 & 0.0 & 0.0\\0.0 & 0.0 & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0\\\end{array}\right)\end{equation*}
+
+    
+
+    \subsection{level 2}\label{level-2}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{k}{def} \PY{n+nf}{Hamil}\PY{p}{(}\PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi}\PY{p}{)}\PY{p}{:}
+             \PY{n}{H} \PY{o}{=} \PY{n}{H1}\PY{p}{(}\PY{n}{omega\PYZus{}1}\PY{p}{)} \PY{o}{+} \PY{n}{xi}\PY{o}{*}\PY{n}{H2}\PY{p}{(}\PY{p}{)}
+             \PY{k}{return} \PY{n}{H}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{Hamil}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mf}{0.5} \PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}19}]:}
+    
+    Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}2.0 & -0.500j\\0.500j & -2.0\\\end{array}\right)\end{equation*}
+
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{k}{def} \PY{n+nf}{leftover}\PY{p}{(}\PY{n}{Lin}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Brief description of the function\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{d} \PY{o}{=} \PY{n}{Lin}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+             \PY{n}{I} \PY{o}{=} \PY{n}{identity}\PY{p}{(}\PY{n}{d}\PY{p}{)}
+             \PY{n}{term1} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{n}{Lin}\PY{o}{.}\PY{n}{trans}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{Lin}\PY{p}{)}
+             \PY{n}{term2} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{n}{I}\PY{p}{,} \PY{p}{(}\PY{p}{(}\PY{n}{Lin}\PY{o}{.}\PY{n}{dag}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{Lin}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+             \PY{n}{term3} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{Lin}\PY{o}{.}\PY{n}{trans}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{Lin}\PY{o}{.}\PY{n}{conj}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{I}\PY{p}{)}
+             \PY{n}{leftover} \PY{o}{=} \PY{l+m+mi}{1}\PY{n}{j}\PY{o}{*}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{term1} \PY{o}{\PYZhy{}} \PY{l+m+mf}{0.5}\PY{o}{*}\PY{p}{(}\PY{n}{term2} \PY{o}{+} \PY{n}{term3}\PY{p}{)}\PY{p}{)}
+             \PY{k}{return} \PY{n}{leftover}
+         
+         
+         \PY{k}{def} \PY{n+nf}{A}\PY{p}{(}\PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi}\PY{p}{,} \PY{n}{Lin}\PY{p}{)}\PY{p}{:}
+             \PY{n}{H} \PY{o}{=} \PY{n}{Hamil}\PY{p}{(}\PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi}\PY{p}{)}
+             \PY{n}{d} \PY{o}{=} \PY{n}{Lin}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+             \PY{n}{I} \PY{o}{=} \PY{n}{identity}\PY{p}{(}\PY{n}{d}\PY{p}{)}
+             \PY{n}{A} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{n}{I}\PY{p}{,} \PY{n}{H}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{tensor}\PY{p}{(}\PY{p}{(}\PY{n}{H}\PY{o}{.}\PY{n}{conj}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{I}\PY{p}{)} \PY{o}{+} \PY{n}{leftover}\PY{p}{(}\PY{n}{Lin}\PY{p}{)}
+             \PY{k}{return} \PY{n}{A}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{A}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{,} \PY{n}{sigmaz}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}21}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.0 & -0.500j & -0.500j & 0.0\\0.500j & (-4.0-0.200j) & 0.0 & -0.500j\\0.500j & 0.0 & (4.0-0.200j) & -0.500j\\0.0 & 0.500j & 0.500j & 0.0\\\end{array}\right)\end{equation*}
+
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{n}{A}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{,} \PY{n}{sigmaz}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}22}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.0 & -0.500j & -0.500j & 0.0\\0.500j & -0.200j & 0.0 & -0.500j\\0.500j & 0.0 & -0.200j & -0.500j\\0.0 & 0.500j & 0.500j & 0.0\\\end{array}\right)\end{equation*}
+
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}23}]:} \PY{n}{I}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        NameError                                 Traceback (most recent call last)
+
+        <ipython-input-23-bde71cc9b50e> in <module>()
+    ----> 1 I
+    
+
+        NameError: name 'I' is not defined
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}24}]:} \PY{c+c1}{\PYZsh{}term1 = tensor(Lin.trans(), Lin)}
+         \PY{c+c1}{\PYZsh{}term2 = tensor(I, ((Lin.dag())*(Lin)))}
+         \PY{c+c1}{\PYZsh{}term3 = tensor(((Lin.trans())*(Lin.conj())), I)}
+         \PY{c+c1}{\PYZsh{}leftover = 1j*(0.1)*(term1 \PYZhy{} 0.5*(term2 + term2))}
+         \PY{k}{def} \PY{n+nf}{x\PYZus{}k}\PY{p}{(}\PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{Lin} \PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Brief description of the function\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{c+c1}{\PYZsh{}H11 = H1(omega\PYZus{}1)}
+             \PY{c+c1}{\PYZsh{}H2\PYZus{}i = H2()}
+             \PY{n}{d} \PY{o}{=} \PY{n}{Lin}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+             \PY{n}{I} \PY{o}{=} \PY{n}{identity}\PY{p}{(}\PY{n}{d}\PY{p}{)}
+             \PY{n}{x\PYZus{}k} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{n}{I}\PY{p}{,} \PY{n}{H2}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{tensor}\PY{p}{(}\PY{p}{(}\PY{n}{H2}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{conj}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{I}\PY{p}{)} \PY{c+c1}{\PYZsh{}+ leftover(Lin)}
+             \PY{k}{return} \PY{n}{x\PYZus{}k}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}25}]:} \PY{n}{I}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        NameError                                 Traceback (most recent call last)
+
+        <ipython-input-25-bde71cc9b50e> in <module>()
+    ----> 1 I
+    
+
+        NameError: name 'I' is not defined
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}26}]:} \PY{n}{x\PYZus{}k}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{n}{sigmaz}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}26}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}0.0 & -1.0j & -1.0j & 0.0\\1.0j & 0.0 & 0.0 & -1.0j\\1.0j & 0.0 & 0.0 & -1.0j\\0.0 & 1.0j & 1.0j & 0.0\\\end{array}\right)\end{equation*}
+
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}27}]:} \PY{k}{def} \PY{n+nf}{L}\PY{p}{(}\PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)}\PY{p}{:}
+             \PY{c+c1}{\PYZsh{}H = H1}
+             \PY{n}{L} \PY{o}{=} \PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{n}{j}\PY{o}{*}\PY{n}{A}\PY{p}{(}\PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi}\PY{p}{,} \PY{n}{Lin}\PY{p}{)}\PY{o}{*}\PY{n}{dt}\PY{p}{)}\PY{o}{.}\PY{n}{expm}\PY{p}{(}\PY{p}{)}
+             \PY{k}{return} \PY{n}{L}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}28}]:} \PY{n}{L}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{sigmaz}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{l+m+mf}{0.001}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}28}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}1.000 & (-0.002-9.999\times10^{-07}j) & (-0.002+9.999\times10^{-07}j) & 4.000\times10^{-06}\\(0.002+9.999\times10^{-07}j) & (1.000+9.998\times10^{-04}j) & -3.999\times10^{-06} & (-0.002-9.999\times10^{-07}j)\\(0.002-9.999\times10^{-07}j) & -3.999\times10^{-06} & (1.000-9.998\times10^{-04}j) & (-0.002+9.999\times10^{-07}j)\\4.000\times10^{-06} & (0.002+9.999\times10^{-07}j) & (0.002-9.999\times10^{-07}j) & 1.000\\\end{array}\right)\end{equation*}
+
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}29}]:} \PY{k}{def} \PY{n+nf}{L\PYZus{}I}\PY{p}{(}\PY{n}{Ti}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Brief description of the function\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{d} \PY{o}{=} \PY{n}{Ti}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+             \PY{n}{I} \PY{o}{=} \PY{n}{identity}\PY{p}{(}\PY{n}{d}\PY{p}{)}
+             \PY{n}{L\PYZus{}I} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{n}{I}\PY{p}{,} \PY{n}{I}\PY{p}{)}
+             \PY{k}{return} \PY{n}{L\PYZus{}I}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}30}]:} \PY{n}{L\PYZus{}I}\PY{p}{(}\PY{n}{sigmay}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}30}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\\0.0 & 0.0 & 1.0 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\\end{array}\right)\end{equation*}
+
+    
+
+    \subsection{parameters}\label{parameters}
+
+    \subsubsection{sub sub topic 1}\label{sub-sub-topic-1}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}31}]:} \PY{c+c1}{\PYZsh{} building the function to optimize (optimizee)}
+         \PY{k}{def} \PY{n+nf}{L\PYZus{}vec}\PY{p}{(}\PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)}\PY{p}{:}
+             \PY{c+c1}{\PYZsh{}xi\PYZus{}vec\PYZus{}size = 2\PYZsh{}xi\PYZus{}vec.size \PYZsh{} finding the size of xi}
+             \PY{n}{L\PYZus{}vec} \PY{o}{=} \PY{p}{[}\PY{n}{L}\PY{p}{(}\PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)} \PY{k}{for} \PY{n}{xi} \PY{o+ow}{in} \PY{n}{xi\PYZus{}vec}\PY{p}{]} 
+             \PY{c+c1}{\PYZsh{} constructing L \PYZsh{}[L(1.0), L(2.0)]}
+             
+             \PY{k}{return} \PY{n}{L\PYZus{}vec}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}32}]:} \PY{k}{def} \PY{n+nf}{fidelity\PYZus{}calc}\PY{p}{(}\PY{n}{A}\PY{p}{,} \PY{n}{B}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Brief description of the function\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{d1} \PY{o}{=} \PY{n}{A}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{c+c1}{\PYZsh{} Assuming no rectangular shaped matrices}
+             \PY{n}{d2} \PY{o}{=} \PY{n}{B}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{c+c1}{\PYZsh{} Assuming no rectangular shaped matrices}
+             \PY{n}{d} \PY{o}{=} \PY{n}{d1}\PY{o}{*}\PY{n}{d2}
+             \PY{n}{first\PYZus{}part} \PY{o}{=} \PY{p}{(}\PY{n}{A} \PY{o}{\PYZhy{}} \PY{n}{B}\PY{p}{)}\PY{o}{.}\PY{n}{dag}\PY{p}{(}\PY{p}{)}
+             \PY{n}{second\PYZus{}part} \PY{o}{=} \PY{p}{(}\PY{n}{A} \PY{o}{\PYZhy{}} \PY{n}{B}\PY{p}{)}
+             \PY{n}{f\PYZus{}int} \PY{o}{=} \PY{p}{(}\PY{n}{first\PYZus{}part}\PY{o}{*} \PY{n}{second\PYZus{}part}\PY{p}{)}
+             \PY{n}{f} \PY{o}{=} \PY{n}{f\PYZus{}int}\PY{o}{.}\PY{n}{tr}\PY{p}{(}\PY{p}{)}
+             \PY{k}{return} \PY{n}{f}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}33}]:} \PY{k}{def} \PY{n+nf}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{Ti}\PY{p}{,} \PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Brief description of the function\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{xi\PYZus{}vec\PYZus{}size} \PY{o}{=} \PY{n}{xi\PYZus{}vec}\PY{o}{.}\PY{n}{size} \PY{c+c1}{\PYZsh{} finding the size of xi}
+             \PY{n}{L\PYZus{}full} \PY{o}{=} \PY{n}{L\PYZus{}I}\PY{p}{(}\PY{n}{Ti}\PY{p}{)} \PY{c+c1}{\PYZsh{} Identity for the for loop of L}
+             \PY{n}{L\PYZus{}v} \PY{o}{=} \PY{n}{L\PYZus{}vec}\PY{p}{(}\PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)} \PY{c+c1}{\PYZsh{} calling L\PYZus{}vec}
+             \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{xi\PYZus{}vec\PYZus{}size}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} generating L\PYZus{}full}
+                 \PY{n}{L\PYZus{}full} \PY{o}{=} \PY{n}{L\PYZus{}full}\PY{o}{*}\PY{n}{L\PYZus{}v}\PY{p}{[}\PY{n}{xi\PYZus{}vec\PYZus{}size} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n}{i}\PY{p}{]}
+             \PY{k}{return} \PY{n}{L\PYZus{}full}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}34}]:} \PY{k}{def} \PY{n+nf}{F}\PY{p}{(}\PY{n}{Ti}\PY{p}{,} \PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Brief description of the function\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{L\PYZus{}full} \PY{o}{=} \PY{n}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{Ti}\PY{p}{,} \PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+             \PY{n}{T} \PY{o}{=} \PY{n}{T\PYZus{}maker}\PY{p}{(}\PY{n}{Ti}\PY{p}{)}
+             \PY{n}{F} \PY{o}{=} \PY{n}{real}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{fidelity\PYZus{}calc}\PY{p}{(}\PY{n}{T}\PY{p}{,} \PY{n}{L\PYZus{}full}\PY{p}{)}\PY{p}{)}   
+             \PY{k}{return} \PY{n}{F}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}35}]:} \PY{n}{fidelity\PYZus{}calc}\PY{p}{(}\PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{sigmay}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}35}]:} 4.0
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}36}]:} \PY{n}{fidelity\PYZus{}calc}\PY{p}{(}\PY{n}{sigmay}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{sigmay}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}36}]:} 0.0
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}37}]:} \PY{n}{xi\PYZus{}vec\PYZus{}test} \PY{o}{=} \PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{1.0}\PY{p}{,} \PY{l+m+mf}{2.0}\PY{p}{]}\PY{p}{)}
+         \PY{n}{xi\PYZus{}vec\PYZus{}test}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}37}]:} array([1., 2.])
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}38}]:} \PY{n}{xi\PYZus{}vec\PYZus{}test}\PY{o}{.}\PY{n}{size}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}38}]:} 2
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}39}]:} \PY{n}{w\PYZus{}vec} \PY{o}{=} \PY{p}{[}\PY{n}{xi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{k}{for} \PY{n}{xi} \PY{o+ow}{in} \PY{n}{xi\PYZus{}vec\PYZus{}test}\PY{p}{]}
+         \PY{n}{w\PYZus{}vec}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}39}]:} [1.0, 4.0]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}40}]:} \PY{c+c1}{\PYZsh{} F(Ti, omega\PYZus{}1, xi\PYZus{}vec, Lin, dt)}
+         \PY{n}{F}\PY{p}{(}\PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{l+m+mf}{0.5} \PY{p}{,} \PY{n}{xi\PYZus{}vec\PYZus{}test}\PY{p}{,} \PY{n}{sigmaz}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{l+m+mf}{0.001}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}40}]:} -7.998400634493139
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}41}]:} \PY{k}{def} \PY{n+nf}{L\PYZus{}comma\PYZus{}k\PYZus{}maker}\PY{p}{(}\PY{n}{Ti}\PY{p}{,} \PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{k}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)}\PY{p}{:}
+             \PY{n}{N} \PY{o}{=} \PY{n}{xi\PYZus{}vec}\PY{o}{.}\PY{n}{size}
+             \PY{n}{L\PYZus{}v} \PY{o}{=} \PY{n}{L\PYZus{}vec}\PY{p}{(}\PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+             
+             \PY{n}{inner\PYZus{}part} \PY{o}{=} \PY{n}{L\PYZus{}I}\PY{p}{(}\PY{n}{Ti}\PY{p}{)}
+             \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{N}\PY{p}{)}\PY{p}{:}
+                 \PY{k}{if} \PY{n}{i} \PY{o}{==} \PY{p}{(} \PY{n}{N} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n}{k} \PY{p}{)}\PY{p}{:}
+                     \PY{n}{inner\PYZus{}part} \PY{o}{=} \PY{n}{inner\PYZus{}part}\PY{o}{*}\PY{n}{x\PYZus{}k}\PY{p}{(}\PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{Lin} \PY{p}{)}\PY{o}{*}\PY{n}{L\PYZus{}v}\PY{p}{[}\PY{n}{k} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{]}
+                 \PY{k}{else}\PY{p}{:}
+                     \PY{n}{inner\PYZus{}part} \PY{o}{=} \PY{n}{inner\PYZus{}part}\PY{o}{*}\PY{n}{L\PYZus{}v}\PY{p}{[}\PY{n}{N} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n}{i}\PY{p}{]}
+             \PY{n}{l\PYZus{}comma\PYZus{}k} \PY{o}{=} \PY{n}{inner\PYZus{}part}
+             \PY{k}{return} \PY{n}{l\PYZus{}comma\PYZus{}k}
+             
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}42}]:} \PY{c+c1}{\PYZsh{}L\PYZus{}comma\PYZus{}k\PYZus{}maker(Ti, omega\PYZus{}1, xi\PYZus{}vec, k, Lin, dt)}
+         \PY{n}{L\PYZus{}comma\PYZus{}k\PYZus{}maker}\PY{p}{(}\PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{l+m+mf}{0.5} \PY{p}{,} \PY{n}{xi\PYZus{}vec\PYZus{}test}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{sigmaz}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{l+m+mf}{0.001}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}42}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}1.000 & (-0.003-3.499\times10^{-06}j) & (-0.003+3.499\times10^{-06}j) & 8.999\times10^{-06}\\(0.003+2.499\times10^{-06}j) & (1.000+0.002j) & (-8.998\times10^{-06}+2.999\times10^{-09}j) & (-0.003-2.499\times10^{-06}j)\\(0.003-2.499\times10^{-06}j) & (-8.998\times10^{-06}-2.999\times10^{-09}j) & (1.000-0.002j) & (-0.003+2.499\times10^{-06}j)\\8.999\times10^{-06} & (0.003+3.499\times10^{-06}j) & (0.003-3.499\times10^{-06}j) & 1.000\\\end{array}\right)\end{equation*}
+
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}43}]:} \PY{k}{def} \PY{n+nf}{updater}\PY{p}{(}\PY{n}{Ti}\PY{p}{,} \PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Brief description of the function\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{xi\PYZus{}vec\PYZus{}size} \PY{o}{=} \PY{n}{xi\PYZus{}vec}\PY{o}{.}\PY{n}{size} \PY{c+c1}{\PYZsh{} finding the size of xi}
+             \PY{n}{T} \PY{o}{=} \PY{n}{T\PYZus{}maker}\PY{p}{(}\PY{n}{Ti}\PY{p}{)}
+             \PY{n}{L\PYZus{}full} \PY{o}{=} \PY{n}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{Ti}\PY{p}{,} \PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+             \PY{n}{di} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+             \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{xi\PYZus{}vec\PYZus{}size}\PY{p}{)}\PY{p}{:}
+                 \PY{n}{L\PYZus{}comma\PYZus{}k} \PY{o}{=} \PY{n}{L\PYZus{}comma\PYZus{}k\PYZus{}maker}\PY{p}{(}\PY{n}{Ti}\PY{p}{,} \PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{k}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+                 \PY{n}{differentiated} \PY{o}{=} \PY{n}{T} \PY{o}{\PYZhy{}} \PY{n}{L\PYZus{}comma\PYZus{}k}
+                 \PY{n}{plain} \PY{o}{=} \PY{n}{T} \PY{o}{\PYZhy{}} \PY{n}{L\PYZus{}full}
+                 \PY{n}{c} \PY{o}{=} \PY{n}{differentiated}\PY{o}{.}\PY{n}{dag}\PY{p}{(}\PY{p}{)}\PY{o}{*}\PY{n}{plain}
+                 \PY{n}{d} \PY{o}{=} \PY{n}{plain}\PY{o}{.}\PY{n}{dag}\PY{p}{(}\PY{p}{)}\PY{o}{*}\PY{n}{differentiated}
+                 \PY{n}{inside} \PY{o}{=} \PY{n}{c}\PY{o}{.}\PY{n}{tr}\PY{p}{(}\PY{p}{)} \PY{o}{+} \PY{n}{d}\PY{o}{.}\PY{n}{tr}\PY{p}{(}\PY{p}{)}
+                 \PY{n}{di}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{o}{*}\PY{n}{inside}\PY{p}{)}
+         
+             \PY{n}{diff} \PY{o}{=} \PY{n}{array}\PY{p}{(}\PY{n}{di}\PY{p}{)}
+             \PY{n}{xi\PYZus{}new\PYZus{}vec} \PY{o}{=} \PY{n}{xi\PYZus{}vec} \PY{o}{+} \PY{n}{diff}
+             \PY{k}{return} \PY{n}{diff}\PY{p}{,} \PY{n}{xi\PYZus{}new\PYZus{}vec}
+             
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}44}]:} \PY{c+c1}{\PYZsh{}  updater(Ti, omega\PYZus{}1, xi\PYZus{}vec, Lin, dt)}
+         \PY{n}{updater}\PY{p}{(}\PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{l+m+mf}{0.5} \PY{p}{,} \PY{n}{xi\PYZus{}vec\PYZus{}test}\PY{p}{,} \PY{n}{sigmaz}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{l+m+mf}{0.001}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}44}]:} (array([0.8+0.j, 0.8+0.j]), array([1.8+0.j, 2.8+0.j]))
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}45}]:} \PY{k}{def} \PY{n+nf}{terminator}\PY{p}{(}\PY{n}{max\PYZus{}iter}\PY{p}{,} \PY{n}{time\PYZus{}steps}\PY{p}{,} \PY{n}{Ti}\PY{p}{,} \PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{total\PYZus{}time}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Brief description of the function\PYZdq{}\PYZdq{}\PYZdq{}}
+             
+             \PY{n}{xi\PYZus{}initial} \PY{o}{=}  \PY{l+m+mi}{1000}\PY{o}{*}\PY{n}{random\PYZus{}sample}\PY{p}{(}\PY{p}{(}\PY{n}{time\PYZus{}steps}\PY{p}{,}\PY{p}{)}\PY{p}{)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{xi\PYZus{}initial}\PY{p}{)}
+             \PY{n}{dt} \PY{o}{=} \PY{n}{total\PYZus{}time}\PY{o}{/}\PY{n}{time\PYZus{}steps}
+             \PY{n}{xi\PYZus{}diff}\PY{p}{,} \PY{n}{xi\PYZus{}new\PYZus{}vec} \PY{o}{=} \PY{n}{updater}\PY{p}{(}\PY{n}{Ti}\PY{p}{,} \PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi\PYZus{}initial}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{xi\PYZus{}new\PYZus{}vec}\PY{p}{)}
+             \PY{c+c1}{\PYZsh{}xi\PYZus{}diff = xi\PYZus{}new\PYZus{}vec \PYZhy{} xi\PYZus{}initial}
+             \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{max\PYZus{}iter}\PY{p}{)}\PY{p}{:}
+                 \PY{k}{if} \PY{n}{amax}\PY{p}{(}\PY{n}{xi\PYZus{}diff}\PY{p}{)} \PY{o}{\PYZlt{}} \PY{n}{epsilon}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{p}{:}
+                     \PY{n}{xi\PYZus{}final} \PY{o}{=} \PY{n}{xi\PYZus{}new\PYZus{}vec}
+                     \PY{k}{break}
+                 \PY{k}{else} \PY{p}{:}
+                     \PY{n}{xi\PYZus{}diff}\PY{p}{,} \PY{n}{xi\PYZus{}new\PYZus{}vec} \PY{o}{=} \PY{n}{updater}\PY{p}{(}\PY{n}{Ti}\PY{p}{,} \PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi\PYZus{}new\PYZus{}vec}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+                     \PY{n+nb}{print}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+                     \PY{n+nb}{print}\PY{p}{(}\PY{n}{amax}\PY{p}{(}\PY{n}{xi\PYZus{}diff}\PY{p}{)}\PY{p}{)}
+                     
+                 
+             \PY{n}{xi\PYZus{}final} \PY{o}{=} \PY{n}{xi\PYZus{}new\PYZus{}vec}    
+             \PY{k}{return} \PY{n}{xi\PYZus{}final}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}46}]:} \PY{n}{omega\PYZus{}1} \PY{o}{=} \PY{l+m+mf}{0.5}
+         \PY{n}{total\PYZus{}time} \PY{o}{=} \PY{l+m+mi}{10}\PY{o}{*}\PY{n}{pi}\PY{o}{/}\PY{n}{omega\PYZus{}1}
+         \PY{n}{epsilon} \PY{o}{=} \PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{6}\PY{p}{)}
+         \PY{n}{max\PYZus{}iter} \PY{o}{=} \PY{l+m+mi}{20}\PY{c+c1}{\PYZsh{}10**4\PYZsh{}1000\PYZsh{}100\PYZsh{}50\PYZsh{}20}
+         \PY{n}{time\PYZus{}steps} \PY{o}{=} \PY{l+m+mi}{20}
+         \PY{n}{dt} \PY{o}{=} \PY{n}{total\PYZus{}time}\PY{o}{/}\PY{n}{time\PYZus{}steps}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}47}]:} \PY{n}{Lin} \PY{o}{=} \PY{n}{sigmaz}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{} Lindbladian}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}48}]:} \PY{n}{Ti} \PY{o}{=} \PY{n}{sigmax}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{} Target unitary}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}49}]:} \PY{c+c1}{\PYZsh{} terminator(20, 20, Ti, omega\PYZus{}1, Lin, total\PYZus{}time)}
+         \PY{n}{xi\PYZus{}opt} \PY{o}{=} \PY{n}{terminator}\PY{p}{(}\PY{n}{max\PYZus{}iter}\PY{p}{,} \PY{n}{time\PYZus{}steps}\PY{p}{,} \PY{n}{Ti}\PY{p}{,} \PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{total\PYZus{}time}\PY{p}{)}
+         \PY{n}{xi\PYZus{}opt}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[581.76814376 334.31940502 979.65638358 567.6738325  668.92268631
+ 815.94205522  72.25216283  50.96168835 790.65661935 484.11308175
+ 432.52538306 950.25100772  45.93246791 409.37421383 343.11442882
+ 877.69710861  46.05827369 413.22165323 870.5530038  333.06177038]
+[582.36814386+0.j 334.91940512+0.j 980.25638367+0.j 568.2738326 +0.j
+ 669.52268641+0.j 816.54205532+0.j  72.85216293+0.j  51.56168844+0.j
+ 791.25661945+0.j 484.71308185+0.j 433.12538316+0.j 950.85100782+0.j
+  46.53246801+0.j 409.97421393+0.j 343.71442892+0.j 878.29710871+0.j
+  46.65827379+0.j 413.82165333+0.j 871.1530039 +0.j 333.66177048+0.j]
+0
+(0.6000003282959827+0j)
+1
+(0.6000024204268262+0j)
+2
+(0.5999995364467616+0j)
+3
+(0.6000012109209927+0j)
+4
+(0.6000001383547251+0j)
+5
+(0.600000356324331+0j)
+6
+(0.6000023093932905+0j)
+7
+(0.5999996083788142+0j)
+8
+(0.6000011737618692+0j)
+9
+(0.600000172811054+0j)
+10
+(0.6000003811261096+0j)
+11
+(0.600002211159836+0j)
+12
+(0.59999967252417+0j)
+13
+(0.6000011409739655+0j)
+14
+(0.6000002034677607+0j)
+15
+(0.6000004031991029+0j)
+16
+(0.6000021236452557+0j)
+17
+(0.599999730073904+0j)
+18
+(0.6000011118630466+0j)
+19
+(0.6000002309158649+0j)
+
+    \end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}49}]:} array([594.36815832+0.j, 346.91941959+0.j, 992.25639814+0.j,
+                580.27384706+0.j, 681.52270087+0.j, 828.54206979+0.j,
+                 84.85217739+0.j,  63.56170291+0.j, 803.25663392+0.j,
+                496.71309631+0.j, 445.12539762+0.j, 962.85102228+0.j,
+                 58.53248247+0.j, 421.9742284 +0.j, 355.71444338+0.j,
+                890.29712318+0.j,  58.65828825+0.j, 425.8216678 +0.j,
+                883.15301836+0.j, 345.66178495+0.j])
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}50}]:} \PY{n}{F}\PY{p}{(}\PY{n}{Ti}\PY{p}{,} \PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}50}]:} -3.000011201858398
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}51}]:} \PY{n}{max\PYZus{}iter}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}51}]:} 20
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}52}]:} \PY{n}{T} \PY{o}{=} \PY{n}{T\PYZus{}maker}\PY{p}{(}\PY{n}{Ti}\PY{p}{)}
+         \PY{n}{T}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}52}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}0.0 & 0.0 & 0.0 & 1.0\\0.0 & 0.0 & 1.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\\1.0 & 0.0 & 0.0 & 0.0\\\end{array}\right)\end{equation*}
+
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}53}]:} \PY{n}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{Ti}\PY{p}{,} \PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}53}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.501 & (-3.808\times10^{-04}+6.230\times10^{-07}j) & (-3.808\times10^{-04}-6.230\times10^{-07}j) & 0.499\\(3.812\times10^{-04}+1.072\times10^{-06}j) & (8.544\times10^{-04}+4.298\times10^{-06}j) & (8.509\times10^{-04}+1.112\times10^{-06}j) & (-3.812\times10^{-04}-1.072\times10^{-06}j)\\(3.812\times10^{-04}-1.072\times10^{-06}j) & (8.509\times10^{-04}-1.112\times10^{-06}j) & (8.544\times10^{-04}-4.298\times10^{-06}j) & (-3.812\times10^{-04}+1.072\times10^{-06}j)\\0.499 & (3.808\times10^{-04}-6.230\times10^{-07}j) & (3.808\times10^{-04}+6.230\times10^{-07}j) & 0.501\\\end{array}\right)\end{equation*}
+
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}54}]:} \PY{n}{hinton}\PY{p}{(}\PY{n}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{Ti}\PY{p}{,} \PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{dt}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}54}]:} (<Figure size 576x432 with 2 Axes>,
+          <matplotlib.axes.\_subplots.AxesSubplot at 0x11778c0b8>)
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_70_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{l+m+mf}{1.31350478e\PYZhy{}05} \PY{c+c1}{\PYZsh{} 40}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}12}]:} 1.31350478e-05
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{l+m+mf}{1.31390107e\PYZhy{}05} \PY{c+c1}{\PYZsh{} 50}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}13}]:} 1.31390107e-05
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{α} \PY{o}{=} \PY{l+m+mi}{2}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{n}{new\PYZus{}array} \PY{o}{=} \PY{n}{random\PYZus{}sample}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        NameError                                 Traceback (most recent call last)
+
+        <ipython-input-15-e03955631bdf> in <module>()
+    ----> 1 new\_array = random\_sample((4,3,))
+    
+
+        NameError: name 'random\_sample' is not defined
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{new\PYZus{}array}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{new\PYZus{}array}\PY{o}{.}\PY{n}{any}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{new\PYZus{}array}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{0}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{new\PYZus{}array}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{new\PYZus{}array}\PY{o}{.}\PY{n}{any}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{new\PYZus{}array}\PY{o}{.}\PY{n}{all}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n+nb}{max}\PY{p}{(}\PY{n}{new\PYZus{}array}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n+nb}{max}\PY{p}{(}\PY{n}{new\PYZus{}array}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{k+kn}{from} \PY{n+nn}{numpy} \PY{k}{import} \PY{n}{amax} 
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{amax}\PY{p}{(}\PY{n}{new\PYZus{}array}\PY{p}{)}
+\end{Verbatim}
+
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
