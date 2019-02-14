@@ -141,7 +141,7 @@
     \def\gt{>}
     \def\lt{<}
     % Document parameters
-    \title{scratchpad1}
+    \title{oqcg}
     
     
     
@@ -282,146 +282,10 @@
     
     \section{Imports}\label{imports}
 
+    Need to have jate.py in your folder
+
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}71}]:} \PY{c+c1}{\PYZsh{} \PYZsh{} Imports}
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{}\PYZsh{} Qutip imports 1}
-         
-         \PY{c+c1}{\PYZsh{} In[1]:}
-         
-         
-         \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{operators} \PY{k}{import} \PY{n}{sigmax}\PY{p}{,} \PY{n}{sigmay}\PY{p}{,} \PY{n}{sigmaz}\PY{p}{,} \PY{n}{identity}\PY{p}{,} \PY{n}{qeye}
-         \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{operators} \PY{k}{import} \PY{n}{position}\PY{p}{,} \PY{n}{momentum}\PY{p}{,} \PY{n}{num}\PY{p}{,} \PY{n}{create}\PY{p}{,} \PY{n}{destroy}
-         \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{operators} \PY{k}{import} \PY{n}{commutator}\PY{p}{,} \PY{n}{qdiags}
-         \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{simdiag} \PY{k}{import} \PY{n}{simdiag}
-         \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{states} \PY{k}{import} \PY{n}{basis}\PY{p}{,} \PY{n}{ket2dm}
-         \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{tensor} \PY{k}{import} \PY{n}{tensor}
-         \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{qip}\PY{n+nn}{.}\PY{n+nn}{gates} \PY{k}{import} \PY{n}{swap}\PY{p}{,} \PY{n}{rx}\PY{p}{,} \PY{n}{ry}\PY{p}{,} \PY{n}{rz}\PY{p}{,} \PY{n}{cnot}
-         \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{qobj} \PY{k}{import} \PY{n}{Qobj}
-         \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{visualization} \PY{k}{import} \PY{n}{hinton}
-         \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{visualization} \PY{k}{import} \PY{n}{matrix\PYZus{}histogram\PYZus{}complex}\PY{p}{,} \PY{n}{matrix\PYZus{}histogram}
-         \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{random\PYZus{}objects} \PY{k}{import} \PY{n}{rand\PYZus{}herm}\PY{p}{,} \PY{n}{rand\PYZus{}unitary}\PY{p}{,} \PY{n}{rand\PYZus{}dm}
-         
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{}\PYZsh{} Qutip imports 2}
-         
-         \PY{c+c1}{\PYZsh{} In[3]:}
-         
-         
-         \PY{c+c1}{\PYZsh{}from }
-         
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{}\PYZsh{} Numpy imports }
-         
-         \PY{c+c1}{\PYZsh{} In[2]:}
-         
-         
-         \PY{k+kn}{from} \PY{n+nn}{numpy} \PY{k}{import} \PY{n}{sin}\PY{p}{,} \PY{n}{cos}\PY{p}{,} \PY{n}{tan}\PY{p}{,} \PY{n}{real}\PY{p}{,} \PY{n}{imag}\PY{p}{,}  \PY{n}{log}\PY{p}{,} \PY{n}{conj}
-         \PY{k+kn}{from} \PY{n+nn}{numpy} \PY{k}{import} \PY{n}{array}\PY{p}{,} \PY{n}{append}\PY{p}{,} \PY{n}{linspace}\PY{p}{,} \PY{n}{arange}
-         \PY{k+kn}{from} \PY{n+nn}{numpy} \PY{k}{import} \PY{n}{add}\PY{p}{,} \PY{n}{sqrt}\PY{p}{,} \PY{n+nb}{abs}\PY{p}{,} \PY{n}{dot}
-         \PY{k+kn}{from} \PY{n+nn}{numpy}\PY{n+nn}{.}\PY{n+nn}{random} \PY{k}{import} \PY{n}{random}\PY{p}{,} \PY{n}{random\PYZus{}sample}\PY{p}{,} \PY{n}{rand}\PY{p}{,} \PY{n}{seed}\PY{p}{,} \PY{n}{RandomState}
-         \PY{k+kn}{from} \PY{n+nn}{numpy} \PY{k}{import} \PY{n}{concatenate}\PY{p}{,} \PY{n}{hstack}\PY{p}{,} \PY{n}{vstack}\PY{p}{,} \PY{n}{block}\PY{p}{,} \PY{n}{dstack}\PY{p}{,} \PY{n}{vsplit}
-         \PY{k+kn}{from} \PY{n+nn}{numpy} \PY{k}{import} \PY{n}{trace}\PY{p}{,} \PY{n}{diag}
-         \PY{k+kn}{from} \PY{n+nn}{numpy} \PY{k}{import} \PY{n}{ones}\PY{p}{,} \PY{n}{zeros}\PY{p}{,} \PY{n}{ones\PYZus{}like}\PY{p}{,} \PY{n}{zeros\PYZus{}like}
-         \PY{k+kn}{from} \PY{n+nn}{numpy} \PY{k}{import} \PY{n}{amax}\PY{p}{,} \PY{n}{amin}\PY{p}{,} \PY{n}{nanmax}\PY{p}{,} \PY{n}{nanmin}
-         \PY{k+kn}{from} \PY{n+nn}{numpy} \PY{k}{import} \PY{n}{outer}\PY{p}{,} \PY{n}{multiply}
-         \PY{c+c1}{\PYZsh{} from numpy import pi}
-         
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{}\PYZsh{} Scipy imports}
-         
-         \PY{c+c1}{\PYZsh{} In[17]:}
-         
-         
-         \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{integrate} \PY{k}{import} \PY{n}{ode}\PY{p}{,} \PY{n}{odeint}\PY{p}{,} \PY{n}{complex\PYZus{}ode}
-         \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{optimize} \PY{k}{import} \PY{n}{minimize}
-         \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{linalg} \PY{k}{import} \PY{n}{eigh}\PY{p}{,} \PY{n}{inv}\PY{p}{,} \PY{n}{norm}\PY{p}{,} \PY{n}{expm}
-         \PY{c+c1}{\PYZsh{} from scipy.linalg import }
-         \PY{c+c1}{\PYZsh{} from scipy import}
-         
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{}\PYZsh{} Matplotlib imports}
-         
-         \PY{c+c1}{\PYZsh{} In[18]:}
-         
-         
-         \PY{k+kn}{from} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{import} \PY{n}{plot}\PY{p}{,} \PY{n}{figure}\PY{p}{,} \PY{n}{show}\PY{p}{,} \PY{n}{savefig}\PY{p}{,} \PY{n}{axes}
-         \PY{k+kn}{from} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{import} \PY{n}{xlabel}\PY{p}{,} \PY{n}{ylabel}\PY{p}{,} \PY{n}{title}\PY{p}{,} \PY{n}{legend}
-         \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{rcParams}
-         \PY{k+kn}{from} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{import} \PY{n}{style} 
-         \PY{k+kn}{from} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{import} \PY{n}{xlim}\PY{p}{,} \PY{n}{ylim}\PY{p}{,} \PY{n}{axis} 
-         \PY{c+c1}{\PYZsh{} beware not same as axes}
-         \PY{k+kn}{from} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{import} \PY{n}{subplot}\PY{p}{,} \PY{n}{subplots}\PY{p}{,} \PY{n}{text}
-         \PY{k+kn}{from} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{import} \PY{n}{GridSpec}
-         \PY{k+kn}{from} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{import} \PY{n}{scatter}\PY{p}{,} \PY{n}{colorbar}
-         
-         
-         \PY{n}{pgf\PYZus{}with\PYZus{}rc\PYZus{}fonts} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pgf.texsystem}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pdflatex}\PY{l+s+s2}{\PYZdq{}}\PY{p}{\PYZcb{}}
-         \PY{n}{rcParams}\PY{o}{.}\PY{n}{update}\PY{p}{(}\PY{n}{pgf\PYZus{}with\PYZus{}rc\PYZus{}fonts}\PY{p}{)}
-         \PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{seaborn\PYZhy{}whitegrid}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{}\PYZsh{} Math imports}
-         
-         \PY{c+c1}{\PYZsh{} In[19]:}
-         
-         
-         \PY{k+kn}{from} \PY{n+nn}{math} \PY{k}{import} \PY{n}{pi}
-         \PY{k+kn}{from} \PY{n+nn}{math} \PY{k}{import} \PY{n}{exp}
-         
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{}\PYZsh{} Cmath imports}
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{}\PYZsh{} Date and datetime imports}
-         
-         \PY{c+c1}{\PYZsh{} In[20]:}
-         
-         
-         \PY{k+kn}{from} \PY{n+nn}{datetime} \PY{k}{import} \PY{n}{date}
-         \PY{k+kn}{from} \PY{n+nn}{datetime} \PY{k}{import} \PY{n}{datetime}\PY{c+c1}{\PYZsh{} now}
-         
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{}\PYZsh{} Os imports}
-         
-         \PY{c+c1}{\PYZsh{} In[21]:}
-         
-         
-         \PY{k+kn}{from} \PY{n+nn}{os} \PY{k}{import} \PY{n}{getcwd}\PY{p}{,} \PY{n}{mkdir}\PY{p}{,} \PY{n}{chdir}
-         \PY{k+kn}{from} \PY{n+nn}{os}\PY{n+nn}{.}\PY{n+nn}{path} \PY{k}{import} \PY{n}{abspath}\PY{p}{,} \PY{n}{join} 
-         
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{}\PYZsh{} Sympy imports}
-         
-         \PY{c+c1}{\PYZsh{} In[22]:}
-         
-         
-         \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{Function}\PY{p}{,} \PY{n}{dsolve}\PY{p}{,} \PY{n}{Eq}\PY{p}{,} \PY{n}{Derivative}\PY{p}{,} \PY{n}{symbols}
-         \PY{c+c1}{\PYZsh{} x, y, z, t = symbols(\PYZsq{}x y z t\PYZsq{})}
-         \PY{c+c1}{\PYZsh{} k, m, n = symbols(\PYZsq{}k m n\PYZsq{}, integer=True)}
-         \PY{c+c1}{\PYZsh{} f, g, h = symbols(\PYZsq{}f g h\PYZsq{}, cls=Function)}
-         
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{}\PYZsh{} Miscellaneous imports}
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{}\PYZsh{} Extra useful functions}
-         
-         \PY{c+c1}{\PYZsh{} In[23]:}
-         
-         
-         \PY{k}{def} \PY{n+nf}{rint}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
-             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{x}\PY{p}{)}
-             \PY{k}{return} \PY{k+kc}{None}
-         
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{} Next chapter}
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{}\PYZsh{} sub topic 1}
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{}\PYZsh{} sub topic 2}
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{}\PYZsh{} sub topic 3}
-         
-         \PY{c+c1}{\PYZsh{} \PYZsh{}\PYZsh{}\PYZsh{} sub sub topic 1}
+{\color{incolor}In [{\color{incolor}47}]:} \PY{o}{\PYZpc{}}\PY{k}{run} jate.py \PYZsh{}will import everything
 \end{Verbatim}
 
 
@@ -431,662 +295,1025 @@
 careful)}\label{memory-clear-uses-regex-so-be-careful}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}30}]:} \PY{o}{\PYZpc{}}\PY{k}{reset\PYZus{}selective} \PYZhy{}f var1, var2  \PYZsh{} replace var1, var2 with your defined ones
+{\color{incolor}In [{\color{incolor}49}]:} \PY{o}{\PYZpc{}}\PY{k}{reset\PYZus{}selective} \PYZhy{}f var1, var2  \PYZsh{} replace var1, var2 with your defined ones
 \end{Verbatim}
 
 
-    \subsection{sub topic 2}\label{sub-topic-2}
+    \subsection{Building parts}\label{building-parts}
+
+    \subsubsection{Building the things to be calculated only
+once}\label{building-the-things-to-be-calculated-only-once}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}31}]:} \PY{n}{cnot}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}31}]:}
-    
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\0.0 & 0.0 & 1.0 & 0.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}32}]:} \PY{p}{(}\PY{n}{qeye}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{\PYZhy{}} \PY{n}{sigmaz}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}32}]:}
-    
-    Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}0.0 & 0.0\\0.0 & 1.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}33}]:} \PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{qeye}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)} \PY{o}{+} \PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}33}]:}
-    
-    Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}-1.0 & 1.0\\1.0 & -1.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}34}]:} \PY{n}{tensor}\PY{p}{(}\PY{p}{(}\PY{n}{qeye}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{\PYZhy{}} \PY{n}{sigmaz}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{qeye}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)} \PY{o}{+} \PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{)}          \PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}34}]:}
-    
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}0.0 & 0.0 & 0.0 & 0.0\\0.0 & 0.0 & 0.0 & 0.0\\0.0 & 0.0 & -1.0 & 1.0\\0.0 & 0.0 & 1.0 & -1.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}35}]:} \PY{p}{(}\PY{l+m+mi}{1}\PY{n}{j}\PY{o}{*}\PY{p}{(}\PY{n}{pi}\PY{o}{/}\PY{l+m+mi}{4}\PY{p}{)}\PY{o}{*}\PY{n}{tensor}\PY{p}{(}\PY{p}{(}\PY{n}{qeye}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{\PYZhy{}} \PY{n}{sigmaz}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{qeye}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)} \PY{o}{+} \PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{)}          \PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{expm}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}35}]:}
-    
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\\0.0 & 0.0 & (0.500-0.500j) & (0.500+0.500j)\\0.0 & 0.0 & (0.500+0.500j) & (0.500-0.500j)\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{p}{(}\PY{l+m+mi}{1}\PY{o}{*}\PY{p}{(}\PY{n}{pi}\PY{o}{/}\PY{l+m+mi}{4}\PY{p}{)}\PY{o}{*}\PY{n}{tensor}\PY{p}{(}\PY{p}{(}\PY{n}{qeye}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{\PYZhy{}} \PY{n}{sigmaz}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{qeye}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)} \PY{o}{+} \PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{)}          \PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{expm}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}10}]:}
-    
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\\0.0 & 0.0 & 0.604 & 0.396\\0.0 & 0.0 & 0.396 & 0.604\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{p}{(}\PY{l+m+mi}{1}\PY{n}{j}\PY{o}{*}\PY{p}{(}\PY{n}{pi}\PY{o}{/}\PY{l+m+mi}{4}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{n}{j}\PY{p}{)}\PY{o}{*}\PY{n}{tensor}\PY{p}{(}\PY{p}{(}\PY{n}{qeye}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{\PYZhy{}} \PY{n}{sigmaz}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{qeye}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)} \PY{o}{+} \PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{)}  \PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{expm}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}12}]:}
-    
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\\0.0 & 0.0 & 2.905 & -1.905\\0.0 & 0.0 & -1.905 & 2.905\\\end{array}\right)\end{equation*}
-
-    
-
-    \subsection{sub topic 3}\label{sub-topic-3}
-
-    \subsubsection{sub sub topic 1}\label{sub-sub-topic-1}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{cnot}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}13}]:}
-    
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\0.0 & 0.0 & 1.0 & 0.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{cnot}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{eigenenergies}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}14}]:} array([-1.,  1.,  1.,  1.])
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}15}]:} \PY{n}{cnot}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{eigenstates}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}15}]:} (array([-1.,  1.,  1.,  1.]),
-          array([Quantum object: dims = [[2, 2], [1, 1]], shape = (4, 1), type = ket
-          Qobj data =
-          [[ 0.        ]
-           [ 0.        ]
-           [ 0.70710678]
-           [-0.70710678]],
-                 Quantum object: dims = [[2, 2], [1, 1]], shape = (4, 1), type = ket
-          Qobj data =
-          [[0.]
-           [1.]
-           [0.]
-           [0.]],
-                 Quantum object: dims = [[2, 2], [1, 1]], shape = (4, 1), type = ket
-          Qobj data =
-          [[1.]
-           [0.]
-           [0.]
-           [0.]],
-                 Quantum object: dims = [[2, 2], [1, 1]], shape = (4, 1), type = ket
-          Qobj data =
-          [[0.        ]
-           [0.        ]
-           [0.70710678]
-           [0.70710678]]], dtype=object))
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{cnot}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{diag}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}16}]:} array([1., 1., 0., 0.])
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{c\PYZus{}eigenvalue}\PY{p}{,} \PY{n}{c\PYZus{}eigenvec\PYZus{}arr} \PY{o}{=} \PY{n}{cnot}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{eigenstates}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}23}]:} \PY{n}{c\PYZus{}eigenvec}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}23}]:} array([Quantum object: dims = [[2, 2], [1, 1]], shape = (4, 1), type = ket
-         Qobj data =
-         [[ 0.        ]
-          [ 0.        ]
-          [ 0.70710678]
-          [-0.70710678]],
-                Quantum object: dims = [[2, 2], [1, 1]], shape = (4, 1), type = ket
-         Qobj data =
-         [[0.]
-          [1.]
-          [0.]
-          [0.]],
-                Quantum object: dims = [[2, 2], [1, 1]], shape = (4, 1), type = ket
-         Qobj data =
-         [[1.]
-          [0.]
-          [0.]
-          [0.]],
-                Quantum object: dims = [[2, 2], [1, 1]], shape = (4, 1), type = ket
-         Qobj data =
-         [[0.        ]
-          [0.        ]
-          [0.70710678]
-          [0.70710678]]], dtype=object)
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}24}]:} \PY{n}{c\PYZus{}eigenvalue}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}24}]:} array([-1.,  1.,  1.,  1.])
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{qdiags}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-
-        ---------------------------------------------------------------------------
-
-        TypeError                                 Traceback (most recent call last)
-
-        <ipython-input-27-61a25a066823> in <module>()
-    ----> 1 qdiags(2)
-    
-
-        TypeError: qdiags() missing 1 required positional argument: 'offsets'
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}37}]:} \PY{n}{simdiag}\PY{p}{(}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{qeye}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-
-        ---------------------------------------------------------------------------
-
-        AttributeError                            Traceback (most recent call last)
-
-        <ipython-input-37-54d465f50d4b> in <module>()
-    ----> 1 simdiag(array([sigmax(), qeye(2)]))
-    
-
-        /anaconda3/envs/qutip-env/lib/python3.6/site-packages/qutip/simdiag.py in simdiag(ops, evals)
-         82     eigvals, eigvecs = la.eig(A.full())
-         83     zipped = zip(-eigvals, range(len(eigvals)))
-    ---> 84     zipped.sort()
-         85     ds, perm = zip(*zipped)
-         86     ds = -np.real(np.array(ds))
-
-
-        AttributeError: 'zip' object has no attribute 'sort'
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}26}]:} \PY{n}{d} \PY{o}{=} \PY{n}{qdiags}\PY{p}{(}\PY{n}{c\PYZus{}eigenvalue}\PY{p}{)}
-         \PY{n}{d}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-
-        ---------------------------------------------------------------------------
-
-        TypeError                                 Traceback (most recent call last)
-
-        <ipython-input-26-c2334747d78d> in <module>()
-    ----> 1 d = qdiags(c\_eigenvalue)
-          2 d
-
-
-        TypeError: qdiags() missing 1 required positional argument: 'offsets'
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}38}]:} \PY{n}{Qobj}\PY{p}{(}\PY{n}{diag}\PY{p}{(}\PY{n}{c\PYZus{}eigenvalue}\PY{o}{.}\PY{n}{full}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-
-        ---------------------------------------------------------------------------
-
-        AttributeError                            Traceback (most recent call last)
-
-        <ipython-input-38-66948a1e6342> in <module>()
-    ----> 1 Qobj(diag(c\_eigenvalue.full()))
-    
-
-        AttributeError: 'numpy.ndarray' object has no attribute 'full'
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}40}]:} \PY{n}{ceq} \PY{o}{=} \PY{n}{Qobj}\PY{p}{(}\PY{n}{diag}\PY{p}{(}\PY{n}{c\PYZus{}eigenvalue}\PY{p}{)}\PY{p}{)}
-         \PY{n}{ceq}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}40}]:}
-    
-    Quantum object: dims = [[4], [4]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}-1.000 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\\0.0 & 0.0 & 1.0 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}42}]:} \PY{n}{Qobj}\PY{p}{(}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{9}\PY{p}{)}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}42}]:}
-    
-    Quantum object: dims = [[3], [3]], shape = (3, 3), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.0 & 1.0 & 2.0\\3.0 & 4.0 & 5.0\\6.0 & 7.0 & 8.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}44}]:} \PY{n}{inter} \PY{o}{=} \PY{p}{[}\PY{n}{a}\PY{o}{.}\PY{n}{full}\PY{p}{(}\PY{p}{)} \PY{k}{for} \PY{n}{a} \PY{o+ow}{in} \PY{n}{c\PYZus{}eigenvec}\PY{p}{]} 
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}45}]:} \PY{n}{inter}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}45}]:} [array([[ 0.        +0.j],
-                 [ 0.        +0.j],
-                 [ 0.70710678+0.j],
-                 [-0.70710678+0.j]]), array([[0.+0.j],
-                 [1.+0.j],
-                 [0.+0.j],
-                 [0.+0.j]]), array([[1.+0.j],
-                 [0.+0.j],
-                 [0.+0.j],
-                 [0.+0.j]]), array([[0.        +0.j],
-                 [0.        +0.j],
-                 [0.70710678+0.j],
-                 [0.70710678+0.j]])]
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}46}]:} \PY{n}{array}\PY{p}{(}\PY{n}{c\PYZus{}eigenvec}\PY{p}{)}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}46}]:} array([Quantum object: dims = [[2, 2], [1, 1]], shape = (4, 1), type = ket
-         Qobj data =
-         [[ 0.        ]
-          [ 0.        ]
-          [ 0.70710678]
-          [-0.70710678]],
-                Quantum object: dims = [[2, 2], [1, 1]], shape = (4, 1), type = ket
-         Qobj data =
-         [[0.]
-          [1.]
-          [0.]
-          [0.]],
-                Quantum object: dims = [[2, 2], [1, 1]], shape = (4, 1), type = ket
-         Qobj data =
-         [[1.]
-          [0.]
-          [0.]
-          [0.]],
-                Quantum object: dims = [[2, 2], [1, 1]], shape = (4, 1), type = ket
-         Qobj data =
-         [[0.        ]
-          [0.        ]
-          [0.70710678]
-          [0.70710678]]], dtype=object)
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}47}]:} \PY{n}{array}\PY{p}{(}\PY{n}{inter}\PY{p}{)}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}47}]:} array([[[ 0.        +0.j],
-                 [ 0.        +0.j],
-                 [ 0.70710678+0.j],
-                 [-0.70710678+0.j]],
+{\color{incolor}In [{\color{incolor}51}]:} \PY{k}{def} \PY{n+nf}{maker}\PY{p}{(}\PY{n}{omega\PYZus{}1}\PY{p}{,} \PY{n}{H\PYZus{}0}\PY{p}{,} \PY{n}{H\PYZus{}1}\PY{p}{,} \PY{n}{T\PYZus{}s}\PY{p}{,} \PY{n}{Lin}\PY{p}{,} \PY{n}{d}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{gamma}\PY{o}{=}\PY{l+m+mf}{0.1}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}maker}
+         \PY{l+s+sd}{    Makes all the things that remain constant throught the program, but are }
+         \PY{l+s+sd}{    repeatedly used.}
+         \PY{l+s+sd}{    }
          
-                [[ 0.        +0.j],
-                 [ 1.        +0.j],
-                 [ 0.        +0.j],
-                 [ 0.        +0.j]],
+         \PY{l+s+sd}{    Parameters}
+         \PY{l+s+sd}{    \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+         \PY{l+s+sd}{    omega\PYZus{}1 : float}
+         \PY{l+s+sd}{              frequency corresponding to half of the difference between }
+         \PY{l+s+sd}{              energy levels of the qubit}
+         \PY{l+s+sd}{              }
+         \PY{l+s+sd}{    H\PYZus{}0     : Qobj}
+         \PY{l+s+sd}{              Bare Hamiltonian }
+         \PY{l+s+sd}{              }
+         \PY{l+s+sd}{    H\PYZus{}1     : Qobj}
+         \PY{l+s+sd}{              Interaction Hamiltonian }
+         \PY{l+s+sd}{              }
+         \PY{l+s+sd}{    T\PYZus{}s     : Qobj}
+         \PY{l+s+sd}{              Unitary to be implemented in the Hilbert space}
+         \PY{l+s+sd}{    }
+         \PY{l+s+sd}{    Lin     : Qobj}
+         \PY{l+s+sd}{              Linbladian operators}
          
-                [[ 1.        +0.j],
-                 [ 0.        +0.j],
-                 [ 0.        +0.j],
-                 [ 0.        +0.j]],
+         \PY{l+s+sd}{    d       : int}
+         \PY{l+s+sd}{              Dimension of the matrix. Defaults to 2}
+         \PY{l+s+sd}{    }
+         \PY{l+s+sd}{    gamma   : float}
+         \PY{l+s+sd}{              Damping constantof the Linbladian}
          
-                [[ 0.        +0.j],
-                 [ 0.        +0.j],
-                 [ 0.70710678+0.j],
-                 [ 0.70710678+0.j]]])
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}48}]:} \PY{n}{crq} \PY{o}{=} \PY{n}{Qobj}\PY{p}{(}\PY{n}{array}\PY{p}{(}\PY{n}{inter}\PY{p}{)}\PY{p}{)}
-         \PY{n}{crq}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-
-        ---------------------------------------------------------------------------
-
-        TypeError                                 Traceback (most recent call last)
-
-        <ipython-input-48-fb8a58b562e3> in <module>()
-    ----> 1 crq = Qobj(array(inter))
-          2 crq
-
-
-        /anaconda3/envs/qutip-env/lib/python3.6/site-packages/qutip/qobj.py in \_\_init\_\_(self, inpt, dims, shape, type, isherm, copy, fast, superrep)
-        277             do\_copy = copy
-        278             if not isinstance(inpt, fast\_csr\_matrix):
-    --> 279                 \_tmp = sp.csr\_matrix(inpt, dtype=complex, copy=do\_copy)
-        280                 \_tmp.sort\_indices() \#Make sure indices are sorted.
-        281                 do\_copy = 0
-
-
-        /anaconda3/envs/qutip-env/lib/python3.6/site-packages/scipy/sparse/compressed.py in \_\_init\_\_(self, arg1, shape, dtype, copy)
-         77                         self.format)
-         78             from .coo import coo\_matrix
-    ---> 79             self.\_set\_self(self.\_\_class\_\_(coo\_matrix(arg1, dtype=dtype)))
-         80 
-         81         \# Read matrix dimensions given, if any
-
-
-        /anaconda3/envs/qutip-env/lib/python3.6/site-packages/scipy/sparse/coo.py in \_\_init\_\_(self, arg1, shape, dtype, copy)
-        179 
-        180                 if M.ndim != 2:
-    --> 181                     raise TypeError('expected dimension <= 2 array or matrix')
-        182                 else:
-        183                     self.\_shape = check\_shape(M.shape)
-
-
-        TypeError: expected dimension <= 2 array or matrix
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}55}]:} \PY{n}{crq} \PY{o}{=} \PY{n}{Qobj}\PY{p}{(}\PY{n}{block}\PY{p}{(}\PY{p}{[}\PY{n}{inter}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{inter}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{inter}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{inter}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         \PY{l+s+sd}{    }
+         \PY{l+s+sd}{    Returns}
+         \PY{l+s+sd}{    \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+         \PY{l+s+sd}{    }
+         \PY{l+s+sd}{    ih0     : Qobj}
+         \PY{l+s+sd}{              \PYZdl{}I\PYZbs{}otimes H\PYZus{}\PYZob{}0\PYZcb{}\PYZdl{}}
+         \PY{l+s+sd}{              }
+         \PY{l+s+sd}{    ih1     : Qobj}
+         \PY{l+s+sd}{              \PYZdl{}I\PYZbs{}otimes H\PYZus{}\PYZob{}1\PYZcb{}\PYZdl{}}
+         
+         \PY{l+s+sd}{    h0ci    : Qobj}
+         \PY{l+s+sd}{              \PYZdl{}H\PYZus{}\PYZob{}0\PYZcb{}\PYZca{}\PYZob{}*\PYZcb{}\PYZbs{}otimes I \PYZdl{}}
+         
+         \PY{l+s+sd}{    h1ci    : Qobj}
+         \PY{l+s+sd}{              \PYZdl{}H\PYZus{}\PYZob{}1\PYZcb{}\PYZca{}\PYZob{}*\PYZcb{}\PYZbs{}otimes I \PYZdl{}}
+         
+         \PY{l+s+sd}{    T       : Qobj}
+         \PY{l+s+sd}{              Target unitary transformed to the Liouville space}
+         
+         \PY{l+s+sd}{    linbladian : Qobj}
+         \PY{l+s+sd}{                 The full lindbladian term as it appears on transformation to }
+         \PY{l+s+sd}{                 the Liouville space.}
+         \PY{l+s+sd}{        }
+         \PY{l+s+sd}{    \PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{I} \PY{o}{=} \PY{n}{identity}\PY{p}{(}\PY{n}{d}\PY{p}{)}
+             \PY{n}{L\PYZus{}I} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{n}{I}\PY{p}{,} \PY{n}{I}\PY{p}{)}
+             \PY{n}{ih0} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{n}{I}\PY{p}{,} \PY{n}{H\PYZus{}0}\PY{p}{)} 
+             \PY{n}{ih1} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{n}{I}\PY{p}{,} \PY{n}{H\PYZus{}1}\PY{p}{)} 
+             \PY{n}{h0ci} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{n}{H\PYZus{}0}\PY{o}{.}\PY{n}{conj}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{I}\PY{p}{)} 
+             \PY{n}{h1ci} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{n}{H\PYZus{}1}\PY{o}{.}\PY{n}{conj}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{I}\PY{p}{)}
+             \PY{n}{x\PYZus{}k} \PY{o}{=} \PY{n}{ih1} \PY{o}{\PYZhy{}} \PY{n}{h1ci}
+             \PY{n}{term1} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{n}{Lin}\PY{o}{.}\PY{n}{trans}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{Lin}\PY{p}{)}
+             \PY{n}{term2} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{n}{I}\PY{p}{,} \PY{p}{(}\PY{p}{(}\PY{n}{Lin}\PY{o}{.}\PY{n}{dag}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{Lin}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+             \PY{n}{term3} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{Lin}\PY{o}{.}\PY{n}{trans}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{Lin}\PY{o}{.}\PY{n}{conj}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{I}\PY{p}{)}
+             \PY{n}{lindbladian} \PY{o}{=} \PY{l+m+mi}{1}\PY{n}{j}\PY{o}{*}\PY{p}{(}\PY{n}{gamma}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{term1} \PY{o}{\PYZhy{}} \PY{l+m+mf}{0.5}\PY{o}{*}\PY{p}{(}\PY{n}{term2} \PY{o}{+} \PY{n}{term3}\PY{p}{)}\PY{p}{)}
+             \PY{n}{T} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{n}{T\PYZus{}s}\PY{o}{.}\PY{n}{trans}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{T\PYZus{}s}\PY{p}{)} \PY{c+c1}{\PYZsh{} Transforming \PYZdl{}T\PYZus{}\PYZob{}s\PYZcb{}\PYZdl{} to liouville space}
+             
+             
+             \PY{k}{return} \PY{n}{ih0}\PY{p}{,} \PY{n}{ih1}\PY{p}{,} \PY{n}{h0ci}\PY{p}{,} \PY{n}{h1ci}\PY{p}{,} \PY{n}{x\PYZus{}k}\PY{p}{,} \PY{n}{lindbladian}\PY{p}{,} \PY{n}{T}\PY{p}{,} \PY{n}{L\PYZus{}I}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}56}]:} \PY{n}{crq}
+{\color{incolor}In [{\color{incolor}53}]:} \PY{n}{omega\PYZus{}1} \PY{o}{=} \PY{l+m+mf}{0.5}
+         \PY{n}{H\PYZus{}0} \PY{o}{=} \PY{n}{omega\PYZus{}1}\PY{o}{*}\PY{n}{sigmaz}\PY{p}{(}\PY{p}{)} 
+         \PY{n}{H\PYZus{}1} \PY{o}{=} \PY{n}{sigmay}\PY{p}{(}\PY{p}{)}
+         \PY{n}{T\PYZus{}s} \PY{o}{=} \PY{n}{sigmax}\PY{p}{(}\PY{p}{)} 
+         \PY{n}{Lin} \PY{o}{=} \PY{n}{sigmaz}\PY{p}{(}\PY{p}{)}
+         \PY{n}{ih0}\PY{p}{,} \PY{n}{ih1}\PY{p}{,} \PY{n}{h0ci}\PY{p}{,} \PY{n}{h1ci}\PY{p}{,} \PY{n}{x\PYZus{}k}\PY{p}{,} \PY{n}{lindbladian}\PY{p}{,} \PY{n}{T}\PY{p}{,} \PY{n}{L\PYZus{}I}  \PY{o}{=} \PY{n}{maker}\PY{p}{(}\PY{n}{omega\PYZus{}1}\PY{p}{,}
+                                                           \PY{n}{H\PYZus{}0}\PY{p}{,} \PY{n}{H\PYZus{}1}\PY{p}{,} \PY{n}{T\PYZus{}s}\PY{p}{,} 
+                                                           \PY{n}{Lin}\PY{p}{,} \PY{n}{d}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{gamma}\PY{o}{=}\PY{l+m+mf}{0.1}\PY{p}{)}
 \end{Verbatim}
 
-\texttt{\color{outcolor}Out[{\color{outcolor}56}]:}
-    
-    Quantum object: dims = [[4], [4]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.0 & 0.0 & 1.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\\0.707 & 0.0 & 0.0 & 0.707\\-0.707 & 0.0 & 0.0 & 0.707\\\end{array}\right)\end{equation*}
-
-    
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}57}]:} \PY{n}{ceq}
+{\color{incolor}In [{\color{incolor}55}]:} \PY{n}{L\PYZus{}I}
 \end{Verbatim}
 
-\texttt{\color{outcolor}Out[{\color{outcolor}57}]:}
+\texttt{\color{outcolor}Out[{\color{outcolor}55}]:}
     
-    Quantum object: dims = [[4], [4]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}-1.000 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\\0.0 & 0.0 & 1.0 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\\end{array}\right)\end{equation*}
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\\0.0 & 0.0 & 1.0 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\\end{array}\right)\end{equation*}
 
     
+
+    \subsubsection{\texorpdfstring{Building
+\(A(t)\)}{Building A(t)}}\label{building-at}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}58}]:} \PY{n}{crq}\PY{o}{*}\PY{n}{ceq}\PY{o}{*}\PY{p}{(}\PY{n}{crq}\PY{o}{.}\PY{n}{dag}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}57}]:} \PY{k}{def} \PY{n+nf}{A}\PY{p}{(}\PY{n}{xi}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}making \PYZdl{}A(t)\PYZdl{}\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{A} \PY{o}{=} \PY{n}{ih0} \PY{o}{\PYZhy{}} \PY{n}{h0ci} \PY{o}{+} \PY{n}{xi}\PY{o}{*}\PY{p}{(}\PY{n}{ih1} \PY{o}{\PYZhy{}} \PY{n}{h1ci}\PY{p}{)} \PY{o}{+} \PY{n}{lindbladian}
+             \PY{k}{return} \PY{n}{A}
 \end{Verbatim}
 
-\texttt{\color{outcolor}Out[{\color{outcolor}58}]:}
-    
-    Quantum object: dims = [[4], [4]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\\0.0 & 0.0 & 0.0 & 1.000\\0.0 & 0.0 & 1.000 & 0.0\\\end{array}\right)\end{equation*}
-
-    
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}60}]:} \PY{n}{cnot}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}60}]:}
-    
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\0.0 & 0.0 & 1.0 & 0.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}59}]:} \PY{p}{(}\PY{n}{crq}\PY{o}{.}\PY{n}{dag}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{n}{ceq}\PY{o}{*}\PY{n}{crq}
+{\color{incolor}In [{\color{incolor}59}]:} \PY{n}{A}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{)}
 \end{Verbatim}
 
 \texttt{\color{outcolor}Out[{\color{outcolor}59}]:}
     
-    Quantum object: dims = [[4], [4]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\\0.0 & 0.0 & -1.000 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\\end{array}\right)\end{equation*}
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.0 & -0.500j & -0.500j & 0.0\\0.500j & (-1.0-0.200j) & 0.0 & -0.500j\\0.500j & 0.0 & (1.0-0.200j) & -0.500j\\0.0 & 0.500j & 0.500j & 0.0\\\end{array}\right)\end{equation*}
 
     
 
+    \subsubsection{\texorpdfstring{Building \(L(t)\) and the Identity in the
+Liouville
+space}{Building L(t) and the Identity in the Liouville space}}\label{building-lt-and-the-identity-in-the-liouville-space}
+
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}62}]:} \PY{n}{α} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{n}{tensor}\PY{p}{(}\PY{n}{sigmay}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{sigmay}\PY{p}{(}\PY{p}{)}\PY{p}{)}
-         \PY{n}{α}
+{\color{incolor}In [{\color{incolor}61}]:} \PY{k}{def} \PY{n+nf}{L}\PY{p}{(}\PY{n}{xi}\PY{p}{,} \PY{n}{dt}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Making \PYZdl{}L(t) from \PYZdl{}A(t)\PYZdl{}\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{L} \PY{o}{=} \PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{n}{j}\PY{o}{*}\PY{n}{A}\PY{p}{(}\PY{n}{xi}\PY{p}{)}\PY{o}{*}\PY{n}{dt}\PY{p}{)}\PY{o}{.}\PY{n}{expm}\PY{p}{(}\PY{p}{)}
+             \PY{k}{return} \PY{n}{L}
 \end{Verbatim}
 
-\texttt{\color{outcolor}Out[{\color{outcolor}62}]:}
-    
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}0.0 & 0.0 & 0.0 & 0.0\\0.0 & 0.0 & 2.0 & 0.0\\0.0 & 2.0 & 0.0 & 0.0\\0.0 & 0.0 & 0.0 & 0.0\\\end{array}\right)\end{equation*}
-
-    
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}63}]:} \PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{n}{j}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{8}\PY{p}{)}\PY{o}{*}\PY{n}{α}\PY{p}{)}\PY{o}{.}\PY{n}{expm}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}63}]:} \PY{n}{L}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mf}{0.001}\PY{p}{)}
 \end{Verbatim}
 
 \texttt{\color{outcolor}Out[{\color{outcolor}63}]:}
     
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 0.969 & -0.247j & 0.0\\0.0 & -0.247j & 0.969 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\\end{array}\right)\end{equation*}
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}1.000 & (-4.999\times10^{-04}-2.500\times10^{-07}j) & (-4.999\times10^{-04}+2.500\times10^{-07}j) & 2.500\times10^{-07}\\(4.999\times10^{-04}+2.500\times10^{-07}j) & (1.000+9.998\times10^{-04}j) & -2.500\times10^{-07} & (-4.999\times10^{-04}-2.500\times10^{-07}j)\\(4.999\times10^{-04}-2.500\times10^{-07}j) & -2.500\times10^{-07} & (1.000-9.998\times10^{-04}j) & (-4.999\times10^{-04}+2.500\times10^{-07}j)\\2.500\times10^{-07} & (4.999\times10^{-04}+2.500\times10^{-07}j) & (4.999\times10^{-04}-2.500\times10^{-07}j) & 1.000\\\end{array}\right)\end{equation*}
 
     
+
+    \subsection{Major functions}\label{major-functions}
+
+    \subsubsection{Major functions 1}\label{major-functions-1}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}64}]:} \PY{p}{(}\PY{l+m+mi}{1}\PY{n}{j}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{8}\PY{p}{)}\PY{o}{*}\PY{n}{α}\PY{p}{)}\PY{o}{.}\PY{n}{expm}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}64}]:}
-    
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 0.969 & 0.247j & 0.0\\0.0 & 0.247j & 0.969 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}65}]:} \PY{p}{(}\PY{l+m+mi}{1}\PY{n}{j}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{4}\PY{p}{)}\PY{o}{*}\PY{n}{α}\PY{p}{)}\PY{o}{.}\PY{n}{expm}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}65}]:}
-    
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 0.878 & 0.479j & 0.0\\0.0 & 0.479j & 0.878 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}66}]:} \PY{p}{(}\PY{l+m+mi}{1}\PY{n}{j}\PY{o}{*}\PY{p}{(}\PY{n}{pi}\PY{o}{/}\PY{l+m+mi}{4}\PY{p}{)}\PY{o}{*}\PY{n}{α}\PY{p}{)}\PY{o}{.}\PY{n}{expm}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}66}]:}
-    
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 0.0 & 1.0j & 0.0\\0.0 & 1.0j & 0.0 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}67}]:} \PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{n}{j}\PY{o}{*}\PY{p}{(}\PY{n}{pi}\PY{o}{/}\PY{l+m+mi}{8}\PY{p}{)}\PY{o}{*}\PY{n}{α}\PY{p}{)}\PY{o}{.}\PY{n}{expm}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}67}]:}
-    
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 0.707 & -0.707j & 0.0\\0.0 & -0.707j & 0.707 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}69}]:} \PY{n}{β} \PY{o}{=} \PY{n}{tensor}\PY{p}{(}\PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{)}
-         \PY{n}{β}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}69}]:}
-    
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}0.0 & 0.0 & 0.0 & 1.0\\0.0 & 0.0 & 1.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\\1.0 & 0.0 & 0.0 & 0.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}70}]:} \PY{p}{(}\PY{l+m+mi}{1}\PY{n}{j}\PY{o}{*}\PY{p}{(}\PY{n}{pi}\PY{o}{/}\PY{l+m+mi}{4}\PY{p}{)}\PY{o}{*}\PY{n}{β}\PY{p}{)}\PY{o}{.}\PY{n}{expm}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}70}]:}
-    
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.707 & 0.0 & 0.0 & 0.707j\\0.0 & 0.707 & 0.707j & 0.0\\0.0 & 0.707j & 0.707 & 0.0\\0.707j & 0.0 & 0.0 & 0.707\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}75}]:} \PY{n}{one} \PY{o}{=} \PY{n}{basis}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}
-         \PY{n}{one}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}75}]:}
-    
-    Quantum object: dims = [[2], [1]], shape = (2, 1), type = ket\begin{equation*}\left(\begin{array}{*{11}c}1.0\\0.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}76}]:} \PY{n}{zero} \PY{o}{=} \PY{n}{basis}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}
-         \PY{n}{zero}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}76}]:}
-    
-    Quantum object: dims = [[2], [1]], shape = (2, 1), type = ket\begin{equation*}\left(\begin{array}{*{11}c}0.0\\1.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}78}]:} \PY{n}{aas} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{sqrt}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{tensor}\PY{p}{(}\PY{n}{one}\PY{p}{,} \PY{n}{zero}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{1}\PY{n}{j}\PY{o}{*}\PY{n}{tensor}\PY{p}{(}\PY{n}{zero}\PY{p}{,} \PY{n}{one}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}64}]:} \PY{c+c1}{\PYZsh{} building the function to optimize (optimizee)}
+         \PY{k}{def} \PY{n+nf}{L\PYZus{}vec}\PY{p}{(}\PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{dt}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Building the vector of differential \PYZdl{}L(t)\PYZdl{}\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{L\PYZus{}vec} \PY{o}{=} \PY{p}{[}\PY{n}{L}\PY{p}{(}\PY{n}{xi}\PY{p}{,} \PY{n}{dt}\PY{p}{)} \PY{k}{for} \PY{n}{xi} \PY{o+ow}{in} \PY{n}{xi\PYZus{}vec}\PY{p}{]} 
+             \PY{k}{return} \PY{n}{L\PYZus{}vec}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}79}]:} \PY{n}{aas}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}79}]:}
-    
-    Quantum object: dims = [[2, 2], [1, 1]], shape = (4, 1), type = ket\begin{equation*}\left(\begin{array}{*{11}c}0.0\\0.707\\0.707j\\0.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}80}]:} \PY{n}{ket2dm}\PY{p}{(}\PY{n}{aas}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}80}]:}
-    
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}0.0 & 0.0 & 0.0 & 0.0\\0.0 & 0.500 & -0.500j & 0.0\\0.0 & 0.500j & 0.500 & 0.0\\0.0 & 0.0 & 0.0 & 0.0\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}70}]:} \PY{p}{(}\PY{l+m+mi}{1}\PY{n}{j}\PY{o}{*}\PY{p}{(}\PY{n}{pi}\PY{o}{/}\PY{l+m+mi}{4}\PY{p}{)}\PY{o}{*}\PY{n}{β}\PY{p}{)}\PY{o}{.}\PY{n}{expm}\PY{p}{(}\PY{p}{)}\PY{o}{*}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}70}]:}
-    
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.707 & 0.0 & 0.0 & 0.707j\\0.0 & 0.707 & 0.707j & 0.0\\0.0 & 0.707j & 0.707 & 0.0\\0.707j & 0.0 & 0.0 & 0.707\\\end{array}\right)\end{equation*}
-
-    
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{}g = pi/(4 * T) T = 2 * np.pi }
-        \PY{c+c1}{\PYZsh{}H = g * (tensor(sigmax(), sigmax()) + tensor(sigmay(), sigmay()))}
+{\color{incolor}In [{\color{incolor}65}]:} \PY{k}{def} \PY{n+nf}{fidelity\PYZus{}calc}\PY{p}{(}\PY{n}{A}\PY{p}{,} \PY{n}{B}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Making a generalised fidelity function\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{first\PYZus{}part} \PY{o}{=} \PY{p}{(}\PY{n}{A} \PY{o}{\PYZhy{}} \PY{n}{B}\PY{p}{)}\PY{o}{.}\PY{n}{dag}\PY{p}{(}\PY{p}{)}
+             \PY{n}{second\PYZus{}part} \PY{o}{=} \PY{p}{(}\PY{n}{A} \PY{o}{\PYZhy{}} \PY{n}{B}\PY{p}{)}
+             \PY{n}{f\PYZus{}int} \PY{o}{=} \PY{p}{(}\PY{n}{first\PYZus{}part}\PY{o}{*} \PY{n}{second\PYZus{}part}\PY{p}{)}
+             \PY{n}{f} \PY{o}{=} \PY{n}{f\PYZus{}int}\PY{o}{.}\PY{n}{tr}\PY{p}{(}\PY{p}{)}
+             \PY{k}{return} \PY{n}{f}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}84}]:} \PY{n}{H} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{4} \PY{o}{*} \PY{l+m+mi}{2} \PY{p}{)}\PY{p}{)}\PY{o}{*} \PY{p}{(}\PY{n}{tensor}\PY{p}{(}\PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{n}{tensor}\PY{p}{(}\PY{n}{sigmay}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{sigmay}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}66}]:} \PY{k}{def} \PY{n+nf}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{dt}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Building the \PYZdl{}L(t)\PYZdl{} for the total time \PYZdl{}t\PYZdl{}\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{xi\PYZus{}vec\PYZus{}size} \PY{o}{=} \PY{n}{xi\PYZus{}vec}\PY{o}{.}\PY{n}{size} \PY{c+c1}{\PYZsh{} finding the size of xi}
+             \PY{n}{L\PYZus{}full} \PY{o}{=} \PY{n}{L\PYZus{}I} \PY{c+c1}{\PYZsh{} Identity for the for loop of L}
+             \PY{n}{L\PYZus{}v} \PY{o}{=} \PY{n}{L\PYZus{}vec}\PY{p}{(}\PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{dt}\PY{p}{)} \PY{c+c1}{\PYZsh{} calling L\PYZus{}vec}
+             \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{xi\PYZus{}vec\PYZus{}size}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} generating L\PYZus{}full}
+                 \PY{n}{L\PYZus{}full} \PY{o}{=} \PY{n}{L\PYZus{}full}\PY{o}{*}\PY{n}{L\PYZus{}v}\PY{p}{[}\PY{n}{xi\PYZus{}vec\PYZus{}size} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n}{i}\PY{p}{]}
+             \PY{k}{return} \PY{n}{L\PYZus{}full}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}85}]:} \PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{n}{j}\PY{o}{*}\PY{n}{H}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{.}\PY{n}{expm}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}67}]:} \PY{k}{def} \PY{n+nf}{F}\PY{p}{(}\PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{dt}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Using the fidelity metric to find out the closeness between \PYZdl{}T\PYZdl{}}
+         \PY{l+s+sd}{    and \PYZdl{}L(t)\PYZdl{}\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{L\PYZus{}full} \PY{o}{=} \PY{n}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+             \PY{n}{F} \PY{o}{=} \PY{n}{real}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{fidelity\PYZus{}calc}\PY{p}{(}\PY{n}{T}\PY{p}{,} \PY{n}{L\PYZus{}full}\PY{p}{)}\PY{p}{)}   
+             \PY{k}{return} \PY{n}{F}
 \end{Verbatim}
 
-\texttt{\color{outcolor}Out[{\color{outcolor}85}]:}
+
+    \subsubsection{Testing major functions
+1}\label{testing-major-functions-1}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}68}]:} \PY{n}{fidelity\PYZus{}calc}\PY{p}{(}\PY{n}{sigmax}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{sigmay}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}68}]:} 4.0
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}69}]:} \PY{n}{fidelity\PYZus{}calc}\PY{p}{(}\PY{n}{sigmay}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{sigmay}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}69}]:} 0.0
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}70}]:} \PY{n}{xi\PYZus{}vec\PYZus{}test} \PY{o}{=} \PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{1.0}\PY{p}{,} \PY{l+m+mf}{2.0}\PY{p}{]}\PY{p}{)}
+         \PY{n}{xi\PYZus{}vec\PYZus{}test}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}70}]:} array([1., 2.])
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}71}]:} \PY{n}{xi\PYZus{}vec\PYZus{}test}\PY{o}{.}\PY{n}{size}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}71}]:} 2
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}72}]:} \PY{n}{w\PYZus{}vec} \PY{o}{=} \PY{p}{[}\PY{n}{xi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{k}{for} \PY{n}{xi} \PY{o+ow}{in} \PY{n}{xi\PYZus{}vec\PYZus{}test}\PY{p}{]}
+         \PY{n}{w\PYZus{}vec}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}72}]:} [1.0, 4.0]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}73}]:} \PY{c+c1}{\PYZsh{} F(xi\PYZus{}vec, dt)}
+         \PY{n}{F}\PY{p}{(}\PY{n}{xi\PYZus{}vec\PYZus{}test}\PY{p}{,} \PY{l+m+mf}{0.001}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}73}]:} -7.998400634493138
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}74}]:} \PY{n}{L\PYZus{}v} \PY{o}{=} \PY{n}{L\PYZus{}vec}\PY{p}{(}\PY{n}{xi\PYZus{}vec\PYZus{}test}\PY{p}{,} \PY{l+m+mf}{0.001}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}75}]:} \PY{n}{L\PYZus{}v}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}75}]:} [Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False
+          Qobj data =
+          [[ 9.99999000e-01+0.00000000e+00j -9.99899173e-04-4.99933130e-07j
+            -9.99899173e-04+4.99933130e-07j  9.99932920e-07+0.00000000e+00j]
+           [ 9.99899173e-04+4.99933130e-07j  9.99798520e-01+9.99799187e-04j
+            -9.99866260e-07+0.00000000e+00j -9.99899173e-04-4.99933130e-07j]
+           [ 9.99899173e-04-4.99933130e-07j -9.99866260e-07+0.00000000e+00j
+             9.99798520e-01-9.99799187e-04j -9.99899173e-04+4.99933130e-07j]
+           [ 9.99932920e-07+0.00000000e+00j  9.99899173e-04+4.99933130e-07j
+             9.99899173e-04-4.99933130e-07j  9.99999000e-01+0.00000000e+00j]],
+          Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False
+          Qobj data =
+          [[ 9.99996000e-01+0.00000000e+00j -1.99979435e-03-9.99865260e-07j
+            -1.99979435e-03+9.99865260e-07j  3.99972768e-06+0.00000000e+00j]
+           [ 1.99979435e-03+9.99865260e-07j  9.99795521e-01+9.99797187e-04j
+            -3.99946104e-06+0.00000000e+00j -1.99979435e-03-9.99865260e-07j]
+           [ 1.99979435e-03-9.99865260e-07j -3.99946104e-06+0.00000000e+00j
+             9.99795521e-01-9.99797187e-04j -1.99979435e-03+9.99865260e-07j]
+           [ 3.99972768e-06+0.00000000e+00j  1.99979435e-03+9.99865260e-07j
+             1.99979435e-03-9.99865260e-07j  9.99996000e-01+0.00000000e+00j]]]
+\end{Verbatim}
+            
+    \subsubsection{Major Functions 2}\label{major-functions-2}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}76}]:} \PY{k}{def} \PY{n+nf}{L\PYZus{}comma\PYZus{}k\PYZus{}maker}\PY{p}{(}\PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{k}\PY{p}{,} \PY{n}{dt}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Making of the derivative of full \PYZdl{}L(t)\PYZdl{} at time \PYZdl{}t\PYZus{}\PYZob{}k\PYZcb{}\PYZdl{}\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{N} \PY{o}{=} \PY{n}{xi\PYZus{}vec}\PY{o}{.}\PY{n}{size} 
+             \PY{c+c1}{\PYZsh{} Determining the size of xi, and thus the time\PYZus{}steps indirectly.}
+             \PY{n}{L\PYZus{}v} \PY{o}{=} \PY{n}{L\PYZus{}vec}\PY{p}{(}\PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{dt}\PY{p}{)}\PY{c+c1}{\PYZsh{} Making of the full \PYZdl{}L(t)\PYZdl{}}
+             \PY{n}{inner\PYZus{}part} \PY{o}{=} \PY{n}{L\PYZus{}I} \PY{c+c1}{\PYZsh{} Beginner for the for loop}
+             \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{N}\PY{p}{)}\PY{p}{:}
+                 \PY{k}{if} \PY{n}{i} \PY{o}{==} \PY{p}{(} \PY{n}{N} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n}{k} \PY{p}{)}\PY{p}{:}
+                     \PY{c+c1}{\PYZsh{} The step at which \PYZdl{}X\PYZus{}\PYZob{}k\PYZcb{}(t)\PYZdl{} has to be inserted }
+                     \PY{n}{inner\PYZus{}part} \PY{o}{=} \PY{n}{inner\PYZus{}part}\PY{o}{*}\PY{n}{x\PYZus{}k}\PY{o}{*}\PY{n}{L\PYZus{}v}\PY{p}{[}\PY{n}{k} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{]}
+                 \PY{k}{else}\PY{p}{:}
+                     \PY{c+c1}{\PYZsh{} Usual multiplications of \PYZdl{}L\PYZus{}\PYZob{}k\PYZcb{}\PYZdl{}}
+                     \PY{n}{inner\PYZus{}part} \PY{o}{=} \PY{n}{inner\PYZus{}part}\PY{o}{*}\PY{n}{L\PYZus{}v}\PY{p}{[}\PY{n}{N} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n}{i}\PY{p}{]}
+             \PY{n}{l\PYZus{}comma\PYZus{}k} \PY{o}{=} \PY{n}{inner\PYZus{}part}
+             \PY{k}{return} \PY{n}{l\PYZus{}comma\PYZus{}k}
+             
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}77}]:} \PY{c+c1}{\PYZsh{} L\PYZus{}comma\PYZus{}k\PYZus{}maker(xi\PYZus{}vec, k, dt)}
+         \PY{n}{L\PYZus{}comma\PYZus{}k\PYZus{}maker}\PY{p}{(}\PY{n}{xi\PYZus{}vec\PYZus{}test}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mf}{0.001}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}77}]:}
     
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 0.0 & -1.0j & 0.0\\0.0 & -1.0j & 0.0 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\\end{array}\right)\end{equation*}
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}1.000 & (-0.003-3.499\times10^{-06}j) & (-0.003+3.499\times10^{-06}j) & 8.999\times10^{-06}\\(0.003+2.499\times10^{-06}j) & (1.000+0.002j) & (-8.998\times10^{-06}+2.999\times10^{-09}j) & (-0.003-2.499\times10^{-06}j)\\(0.003-2.499\times10^{-06}j) & (-8.998\times10^{-06}-2.999\times10^{-09}j) & (1.000-0.002j) & (-0.003+2.499\times10^{-06}j)\\8.999\times10^{-06} & (0.003+3.499\times10^{-06}j) & (0.003-3.499\times10^{-06}j) & 1.000\\\end{array}\right)\end{equation*}
 
     
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}86}]:} \PY{p}{(}\PY{l+m+mi}{1}\PY{n}{j}\PY{o}{*}\PY{n}{H}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{.}\PY{n}{expm}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}78}]:} \PY{k}{def} \PY{n+nf}{updater}\PY{p}{(}\PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{dt}\PY{p}{,} \PY{n}{epsilon}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Implementing the GRAPE update step\PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{xi\PYZus{}vec\PYZus{}size} \PY{o}{=} \PY{n}{xi\PYZus{}vec}\PY{o}{.}\PY{n}{size} \PY{c+c1}{\PYZsh{} finding the size of xi}
+             \PY{n}{L\PYZus{}full} \PY{o}{=} \PY{n}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+             \PY{n}{di} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+             \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{xi\PYZus{}vec\PYZus{}size}\PY{p}{)}\PY{p}{:}
+                 \PY{c+c1}{\PYZsh{} Building the thing to be added to the old function}
+                 \PY{n}{L\PYZus{}comma\PYZus{}k} \PY{o}{=} \PY{n}{L\PYZus{}comma\PYZus{}k\PYZus{}maker}\PY{p}{(}\PY{n}{xi\PYZus{}vec}\PY{p}{,} \PY{n}{k}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+                 \PY{n}{differentiated} \PY{o}{=} \PY{n}{T} \PY{o}{\PYZhy{}} \PY{n}{L\PYZus{}comma\PYZus{}k}
+                 \PY{n}{plain} \PY{o}{=} \PY{n}{T} \PY{o}{\PYZhy{}} \PY{n}{L\PYZus{}full}
+                 \PY{n}{c} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{differentiated}\PY{o}{.}\PY{n}{dag}\PY{p}{(}\PY{p}{)}\PY{o}{*}\PY{n}{plain}
+                 \PY{n}{d} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{plain}\PY{o}{.}\PY{n}{dag}\PY{p}{(}\PY{p}{)}\PY{o}{*}\PY{n}{differentiated}
+                 \PY{n}{inside} \PY{o}{=} \PY{n}{c}\PY{o}{.}\PY{n}{tr}\PY{p}{(}\PY{p}{)} \PY{o}{+} \PY{n}{d}\PY{o}{.}\PY{n}{tr}\PY{p}{(}\PY{p}{)}
+                 \PY{n}{di}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{epsilon}\PY{o}{*}\PY{n}{inside}\PY{p}{)}
+         
+             \PY{n}{diff} \PY{o}{=} \PY{n}{array}\PY{p}{(}\PY{n}{di}\PY{p}{)}
+             \PY{n}{xi\PYZus{}new\PYZus{}vec} \PY{o}{=} \PY{n}{xi\PYZus{}vec} \PY{o}{+} \PY{n}{diff}
+             \PY{k}{return} \PY{n}{diff}\PY{p}{,} \PY{n}{xi\PYZus{}new\PYZus{}vec}
+             
 \end{Verbatim}
 
-\texttt{\color{outcolor}Out[{\color{outcolor}86}]:}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}79}]:} \PY{c+c1}{\PYZsh{}  updater(xi\PYZus{}vec, dt, epsilon)}
+         \PY{n}{updater}\PY{p}{(}\PY{n}{xi\PYZus{}vec\PYZus{}test}\PY{p}{,} \PY{l+m+mf}{0.001}\PY{p}{,} \PY{l+m+mf}{0.001}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}79}]:} (array([-0.008+0.j, -0.008+0.j]), array([0.992+0.j, 1.992+0.j]))
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}80}]:} \PY{k+kn}{import} \PY{n+nn}{time}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}81}]:} \PY{n}{total\PYZus{}time\PYZus{}evo} \PY{o}{=} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi} \PY{c+c1}{\PYZsh{} total time allowed for evolution}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}82}]:} \PY{n}{times} \PY{o}{=} \PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{total\PYZus{}time\PYZus{}evo}\PY{p}{,} \PY{l+m+mi}{500}\PY{p}{)} 
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}83}]:} \PY{c+c1}{\PYZsh{} vector of times at which discretization }
+         \PY{c+c1}{\PYZsh{} is carried out}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}84}]:} \PY{n}{U} \PY{o}{=} \PY{n}{T\PYZus{}s}
+         \PY{n}{U}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}84}]:}
     
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 0.0 & 1.0j & 0.0\\0.0 & 1.0j & 0.0 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\\end{array}\right)\end{equation*}
+    Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}0.0 & 1.0\\1.0 & 0.0\\\end{array}\right)\end{equation*}
 
     
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}87}]:} \PY{p}{(}\PY{n}{H}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{.}\PY{n}{expm}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}85}]:} \PY{n}{R} \PY{o}{=} \PY{l+m+mi}{500}
 \end{Verbatim}
 
-\texttt{\color{outcolor}Out[{\color{outcolor}87}]:}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}86}]:} \PY{n}{H\PYZus{}ops} \PY{o}{=} \PY{p}{[}\PY{n}{H\PYZus{}1}\PY{p}{]}
+         \PY{n}{H\PYZus{}ops}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}86}]:} [Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True
+          Qobj data =
+          [[0.+0.j 0.-1.j]
+           [0.+1.j 0.+0.j]]]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}87}]:} \PY{n}{H\PYZus{}labels} \PY{o}{=} \PY{p}{[}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}g\PYZus{}}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{no diss\PYZcb{}\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{H\PYZus{}labels}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}87}]:} ['\$g\_\{no diss\}\$']
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}88}]:} \PY{n}{H0} \PY{o}{=} \PY{n}{H\PYZus{}0}
+         \PY{n}{H0}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}88}]:}
     
-    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 2.509 & 2.301 & 0.0\\0.0 & 2.301 & 2.509 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\\end{array}\right)\end{equation*}
+    Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}0.500 & 0.0\\0.0 & -0.500\\\end{array}\right)\end{equation*}
+
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}89}]:} \PY{n}{c\PYZus{}ops} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}90}]:} \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{control}\PY{n+nn}{.}\PY{n+nn}{grape} \PY{k}{import} \PY{n}{plot\PYZus{}grape\PYZus{}control\PYZus{}fields}\PY{p}{,} \PY{n}{\PYZus{}overlap} 
+         \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{control}\PY{n+nn}{.}\PY{n+nn}{grape} \PY{k}{import} \PY{n}{grape\PYZus{}unitary\PYZus{}adaptive}\PY{p}{,} \PY{n}{cy\PYZus{}grape\PYZus{}unitary}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}91}]:} \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{interpolate} \PY{k}{import} \PY{n}{interp1d}
+         \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{ui}\PY{n+nn}{.}\PY{n+nn}{progressbar} \PY{k}{import} \PY{n}{TextProgressBar}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}92}]:} \PY{n}{u0} \PY{o}{=} \PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{rand}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{times}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{pi} \PY{o}{*} \PY{l+m+mf}{0.05} \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{H\PYZus{}ops}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}93}]:} \PY{k+kn}{from} \PY{n+nn}{numpy} \PY{k}{import} \PY{n}{convolve}
+         \PY{n}{u0} \PY{o}{=} \PY{p}{[}\PY{n}{convolve}\PY{p}{(}\PY{n}{ones}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{10}\PY{p}{,} \PY{n}{u0}\PY{p}{[}\PY{n}{idx}\PY{p}{,}\PY{p}{:}\PY{p}{]}\PY{p}{,} \PY{n}{mode}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{same}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{for} \PY{n}{idx} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{H\PYZus{}ops}\PY{p}{)}\PY{p}{)}\PY{p}{]}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}94}]:} \PY{n}{u\PYZus{}limits} \PY{o}{=} \PY{k+kc}{None} \PY{c+c1}{\PYZsh{}[0, 1 * 2 * pi]}
+         \PY{n}{alpha} \PY{o}{=} \PY{k+kc}{None}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}95}]:} \PY{n}{result} \PY{o}{=} \PY{n}{cy\PYZus{}grape\PYZus{}unitary}\PY{p}{(}\PY{n}{U}\PY{p}{,} \PY{n}{H0}\PY{p}{,} \PY{n}{H\PYZus{}ops}\PY{p}{,} \PY{n}{R}\PY{p}{,} \PY{n}{times}\PY{p}{,} \PY{n}{u\PYZus{}start}\PY{o}{=}\PY{n}{u0}\PY{p}{,} \PY{n}{u\PYZus{}limits}\PY{o}{=}\PY{n}{u\PYZus{}limits}\PY{p}{,}
+                                   \PY{n}{eps}\PY{o}{=}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{o}{*}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{n}{alpha}\PY{p}{,} \PY{n}{phase\PYZus{}sensitive}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,}
+                                   \PY{n}{progress\PYZus{}bar}\PY{o}{=}\PY{n}{TextProgressBar}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+10.0\%. Run time:  33.00s. Est. time left: 00:00:04:57
+20.0\%. Run time:  65.56s. Est. time left: 00:00:04:22
+30.0\%. Run time:  98.20s. Est. time left: 00:00:03:49
+40.0\%. Run time: 130.76s. Est. time left: 00:00:03:16
+50.0\%. Run time: 163.29s. Est. time left: 00:00:02:43
+60.0\%. Run time: 196.05s. Est. time left: 00:00:02:10
+70.0\%. Run time: 228.23s. Est. time left: 00:00:01:37
+80.0\%. Run time: 260.41s. Est. time left: 00:00:01:05
+90.0\%. Run time: 292.53s. Est. time left: 00:00:00:32
+Total run time: 324.17s
+
+    \end{Verbatim}
+
+    \paragraph{Plot of optimized control field without
+dissipation}\label{plot-of-optimized-control-field-without-dissipation}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}96}]:} \PY{n}{plot\PYZus{}grape\PYZus{}control\PYZus{}fields}\PY{p}{(}\PY{n}{times}\PY{p}{,}
+                                   \PY{n}{result}\PY{o}{.}\PY{n}{u} \PY{o}{/} \PY{p}{(}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{,} \PY{n}{H\PYZus{}labels}\PY{p}{,} \PY{n}{uniform\PYZus{}axes}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_54_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}97}]:} \PY{n}{U}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}97}]:}
+    
+    Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}0.0 & 1.0\\1.0 & 0.0\\\end{array}\right)\end{equation*}
+
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}98}]:} \PY{n}{result}\PY{o}{.}\PY{n}{U\PYZus{}f}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}98}]:}
+    
+    Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}4.195\times10^{-16} & 1.000j\\1.0j & -5.690\times10^{-16}\\\end{array}\right)\end{equation*}
+
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}99}]:} \PY{n}{result}\PY{o}{.}\PY{n}{U\PYZus{}f}\PY{o}{/}\PY{n}{result}\PY{o}{.}\PY{n}{U\PYZus{}f}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}99}]:}
+    
+    Quantum object: dims = [[2], [2]], shape = (2, 2), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}1.0 & (1.179\times10^{+15}+1.365\times10^{+15}j)\\(1.179\times10^{+15}+1.365\times10^{+15}j) & (-1.233+0.143j)\\\end{array}\right)\end{equation*}
+
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}100}]:} \PY{n}{matrix\PYZus{}histogram}\PY{p}{(}\PY{n}{U}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}100}]:} (<Figure size 432x288 with 2 Axes>,
+           <mpl\_toolkits.mplot3d.axes3d.Axes3D at 0x7fa12c63a518>)
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_58_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}101}]:} \PY{n}{matrix\PYZus{}histogram}\PY{p}{(}\PY{n}{result}\PY{o}{.}\PY{n}{U\PYZus{}f}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}101}]:} (<Figure size 432x288 with 2 Axes>,
+           <mpl\_toolkits.mplot3d.axes3d.Axes3D at 0x7fa12c5ccd68>)
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_59_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}102}]:} \PY{n}{matrix\PYZus{}histogram\PYZus{}complex}\PY{p}{(}\PY{n}{U}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}102}]:} (<Figure size 432x288 with 2 Axes>,
+           <mpl\_toolkits.mplot3d.axes3d.Axes3D at 0x7fa12c56dcf8>)
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_60_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}103}]:} \PY{n}{matrix\PYZus{}histogram\PYZus{}complex}\PY{p}{(}\PY{n}{result}\PY{o}{.}\PY{n}{U\PYZus{}f}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}103}]:} (<Figure size 432x288 with 2 Axes>,
+           <mpl\_toolkits.mplot3d.axes3d.Axes3D at 0x7fa12c4a9d30>)
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_61_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}104}]:} \PY{n}{hinton}\PY{p}{(}\PY{n}{U}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}104}]:} (<Figure size 576x432 with 2 Axes>,
+           <matplotlib.axes.\_subplots.AxesSubplot at 0x7fa12c678d68>)
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_62_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}105}]:} \PY{n}{hinton}\PY{p}{(}\PY{n}{result}\PY{o}{.}\PY{n}{U\PYZus{}f}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}105}]:} (<Figure size 576x432 with 2 Axes>,
+           <matplotlib.axes.\_subplots.AxesSubplot at 0x7fa12c69c5f8>)
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_63_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}106}]:} \PY{n}{times}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}106}]:} 6.283185307179586
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}107}]:} \PY{n}{total\PYZus{}time\PYZus{}evo}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}107}]:} 6.283185307179586
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}108}]:} \PY{n}{total\PYZus{}time}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        NameError                                 Traceback (most recent call last)
+
+        <ipython-input-108-9bec417112c8> in <module>()
+    ----> 1 total\_time
+    
+
+        NameError: name 'total\_time' is not defined
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}109}]:} \PY{n+nb}{len}\PY{p}{(}\PY{n}{times}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}109}]:} 500
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}110}]:} \PY{k}{def} \PY{n+nf}{terminator}\PY{p}{(}\PY{n}{max\PYZus{}iter}\PY{p}{,} \PY{n}{time\PYZus{}steps}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{times}\PY{p}{)}\PY{p}{,} \PY{n}{total\PYZus{}time}\PY{o}{=} \PY{n}{total\PYZus{}time\PYZus{}evo}\PY{p}{,}
+                         \PY{n}{epsilon}\PY{o}{=} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{o}{*}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
+              \PY{l+s+sa}{r}\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Brief description of the function\PYZdq{}\PYZdq{}\PYZdq{}}
+              
+              \PY{n}{xi\PYZus{}initial} \PY{o}{=} \PY{n}{result}\PY{o}{.}\PY{n}{u}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{p}{:} \PY{p}{]} 
+              \PY{c+c1}{\PYZsh{}1000*random\PYZus{}sample((time\PYZus{}steps,))}
+              \PY{n}{dt} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{500}  \PY{c+c1}{\PYZsh{}total\PYZus{}time/time\PYZus{}steps}
+              \PY{n}{xi\PYZus{}diff}\PY{p}{,} \PY{n}{xi\PYZus{}new\PYZus{}vec} \PY{o}{=} \PY{n}{updater}\PY{p}{(}\PY{n}{xi\PYZus{}initial}\PY{p}{,} \PY{n}{dt}\PY{p}{,} \PY{n}{epsilon}\PY{p}{)}
+              
+              \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{max\PYZus{}iter}\PY{p}{)}\PY{p}{:}
+                  \PY{k}{if} \PY{n}{amax}\PY{p}{(}\PY{n}{xi\PYZus{}diff}\PY{p}{)} \PY{o}{\PYZlt{}} \PY{n}{epsilon}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{p}{:}
+                      
+                      \PY{n}{xi\PYZus{}final} \PY{o}{=} \PY{n}{xi\PYZus{}new\PYZus{}vec}
+                      \PY{k}{break}
+                  \PY{k}{else} \PY{p}{:}
+                      \PY{n}{xi\PYZus{}diff}\PY{p}{,} \PY{n}{xi\PYZus{}new\PYZus{}vec} \PY{o}{=} \PY{n}{updater}\PY{p}{(}\PY{n}{xi\PYZus{}new\PYZus{}vec}\PY{p}{,} \PY{n}{dt}\PY{p}{,} \PY{n}{epsilon}\PY{p}{)}
+                      \PY{n+nb}{print}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+                      \PY{n+nb}{print}\PY{p}{(}\PY{n}{amax}\PY{p}{(}\PY{n}{xi\PYZus{}diff}\PY{p}{)}\PY{p}{)}
+                      
+                  
+              \PY{n}{xi\PYZus{}final} \PY{o}{=} \PY{n}{xi\PYZus{}new\PYZus{}vec}    
+              \PY{k}{return} \PY{n}{xi\PYZus{}final}
+\end{Verbatim}
+
+
+    \subsection{sub topic 3}\label{sub-topic-3}
+
+    \subsubsection{try}\label{try}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}111}]:} \PY{n}{xi\PYZus{}opt} \PY{o}{=} \PY{n}{terminator}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}112}]:} \PY{n}{time\PYZus{}steps}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{times}\PY{p}{)}
+          \PY{n}{total\PYZus{}time}\PY{o}{=} \PY{n}{total\PYZus{}time\PYZus{}evo}
+          \PY{n}{epsilon}\PY{o}{=} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{o}{*}\PY{l+m+mi}{1}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}113}]:} \PY{n}{dt} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{500}
+          \PY{n}{F}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}113}]:} -4.223783391928767
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}114}]:} \PY{n}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}114}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.345 & (0.217+0.007j) & (0.217-0.007j) & 0.655\\(-0.217-0.007j) & (-0.014+0.010j) & (-0.298+8.451\times10^{-05}j) & (0.217+0.007j)\\(-0.217+0.007j) & (-0.298-8.451\times10^{-05}j) & (-0.014-0.010j) & (0.217-0.007j)\\0.655 & (-0.217-0.007j) & (-0.217+0.007j) & 0.345\\\end{array}\right)\end{equation*}
+
+    
+
+    \subsubsection{try}\label{try}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}115}]:} \PY{n}{xi\PYZus{}opt} \PY{o}{=} \PY{n}{terminator}\PY{p}{(}\PY{l+m+mi}{1000}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}116}]:} \PY{n}{time\PYZus{}steps}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{times}\PY{p}{)}
+          \PY{n}{total\PYZus{}time}\PY{o}{=} \PY{n}{total\PYZus{}time\PYZus{}evo}
+          \PY{n}{epsilon}\PY{o}{=} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{o}{*}\PY{l+m+mi}{1}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}117}]:} \PY{n}{dt} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{500}
+          \PY{n}{F}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}117}]:} -4.223783391928767
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}118}]:} \PY{n}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}118}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.345 & (0.217+0.007j) & (0.217-0.007j) & 0.655\\(-0.217-0.007j) & (-0.014+0.010j) & (-0.298+8.451\times10^{-05}j) & (0.217+0.007j)\\(-0.217+0.007j) & (-0.298-8.451\times10^{-05}j) & (-0.014-0.010j) & (0.217-0.007j)\\0.655 & (-0.217-0.007j) & (-0.217+0.007j) & 0.345\\\end{array}\right)\end{equation*}
+
+    
+
+    \subsubsection{try}\label{try}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}121}]:} \PY{n}{xi\PYZus{}opt} \PY{o}{=} \PY{n}{terminator}\PY{p}{(}\PY{l+m+mi}{1000}\PY{p}{,}\PY{n}{time\PYZus{}steps}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{times}\PY{p}{)}\PY{p}{,} \PY{n}{total\PYZus{}time}\PY{o}{=} \PY{n}{total\PYZus{}time\PYZus{}evo}\PY{p}{,}
+                         \PY{n}{epsilon}\PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{times}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}123}]:} \PY{n}{time\PYZus{}steps}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{times}\PY{p}{)}
+          \PY{n}{total\PYZus{}time}\PY{o}{=} \PY{n}{total\PYZus{}time\PYZus{}evo}
+          \PY{n}{epsilon} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{times}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}124}]:} \PY{n}{dt} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{500}
+          \PY{n}{F}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}124}]:} -2.239742398764373
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}125}]:} \PY{n}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}125}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.323 & (0.091-0.088j) & (0.091+0.088j) & 0.677\\(0.244+0.061j) & (-0.053+0.008j) & (0.175+0.262j) & (-0.244-0.061j)\\(0.244-0.061j) & (0.175-0.262j) & (-0.053-0.008j) & (-0.244+0.061j)\\0.677 & (-0.091+0.088j) & (-0.091-0.088j) & 0.323\\\end{array}\right)\end{equation*}
+
+    
+
+    \subsubsection{try}\label{try}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}126}]:} \PY{n}{xi\PYZus{}opt} \PY{o}{=} \PY{n}{terminator}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{n}{time\PYZus{}steps}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{times}\PY{p}{)}\PY{p}{,} \PY{n}{total\PYZus{}time}\PY{o}{=} \PY{n}{total\PYZus{}time\PYZus{}evo}\PY{p}{,}
+                         \PY{n}{epsilon}\PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{times}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}127}]:} \PY{n}{time\PYZus{}steps}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{times}\PY{p}{)}
+          \PY{n}{total\PYZus{}time}\PY{o}{=} \PY{n}{total\PYZus{}time\PYZus{}evo}
+          \PY{n}{epsilon} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{times}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}128}]:} \PY{n}{dt} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{500}
+          \PY{n}{F}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}128}]:} -2.239742398764373
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}129}]:} \PY{n}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}129}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.323 & (0.091-0.088j) & (0.091+0.088j) & 0.677\\(0.244+0.061j) & (-0.053+0.008j) & (0.175+0.262j) & (-0.244-0.061j)\\(0.244-0.061j) & (0.175-0.262j) & (-0.053-0.008j) & (-0.244+0.061j)\\0.677 & (-0.091+0.088j) & (-0.091-0.088j) & 0.323\\\end{array}\right)\end{equation*}
+
+    
+
+    \subsubsection{try}\label{try}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}130}]:} \PY{n}{xi\PYZus{}opt} \PY{o}{=} \PY{n}{terminator}\PY{p}{(}\PY{l+m+mi}{1000}\PY{p}{,}\PY{n}{time\PYZus{}steps}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{times}\PY{p}{)}\PY{p}{,} \PY{n}{total\PYZus{}time}\PY{o}{=} \PY{n}{total\PYZus{}time\PYZus{}evo}\PY{p}{,}
+                         \PY{n}{epsilon}\PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}131}]:} \PY{n}{time\PYZus{}steps}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{times}\PY{p}{)}
+          \PY{n}{total\PYZus{}time}\PY{o}{=} \PY{n}{total\PYZus{}time\PYZus{}evo}
+          \PY{n}{epsilon} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{times}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}132}]:} \PY{n}{dt} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{500}
+          \PY{n}{F}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}132}]:} -0.9548953874356939
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}133}]:} \PY{n}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}133}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.220 & (0.033-0.026j) & (0.033+0.026j) & 0.780\\(-0.038+0.005j) & (-0.065-0.048j) & (0.394+0.015j) & (0.038-0.005j)\\(-0.038-0.005j) & (0.394-0.015j) & (-0.065+0.048j) & (0.038+0.005j)\\0.780 & (-0.033+0.026j) & (-0.033-0.026j) & 0.220\\\end{array}\right)\end{equation*}
+
+    
+
+    \subsubsection{try}\label{try}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}134}]:} \PY{n}{xi\PYZus{}opt} \PY{o}{=} \PY{n}{terminator}\PY{p}{(}\PY{l+m+mi}{1000}\PY{p}{,}\PY{n}{time\PYZus{}steps}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{times}\PY{p}{)}\PY{p}{,} \PY{n}{total\PYZus{}time}\PY{o}{=} \PY{n}{total\PYZus{}time\PYZus{}evo}\PY{p}{,}
+                         \PY{n}{epsilon}\PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}135}]:} \PY{n}{dt} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{500}
+          \PY{n}{F}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}135}]:} -0.9547563688866646
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}136}]:} \PY{n}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}136}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.220 & (0.035-0.027j) & (0.035+0.027j) & 0.780\\(-0.038+0.005j) & (-0.064-0.048j) & (0.394+0.012j) & (0.038-0.005j)\\(-0.038-0.005j) & (0.394-0.012j) & (-0.064+0.048j) & (0.038+0.005j)\\0.780 & (-0.035+0.027j) & (-0.035-0.027j) & 0.220\\\end{array}\right)\end{equation*}
+
+    
+
+    \subsubsection{try}\label{try}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}137}]:} \PY{n}{xi\PYZus{}opt} \PY{o}{=} \PY{n}{terminator}\PY{p}{(}\PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4}\PY{p}{,}\PY{n}{time\PYZus{}steps}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{times}\PY{p}{)}\PY{p}{,} \PY{n}{total\PYZus{}time}\PY{o}{=} \PY{n}{total\PYZus{}time\PYZus{}evo}\PY{p}{,}
+                         \PY{n}{epsilon}\PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}138}]:} \PY{n}{dt} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{500}
+          \PY{n}{F}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}138}]:} -0.9548953874356939
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}139}]:} \PY{n}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}139}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.220 & (0.033-0.026j) & (0.033+0.026j) & 0.780\\(-0.038+0.005j) & (-0.065-0.048j) & (0.394+0.015j) & (0.038-0.005j)\\(-0.038-0.005j) & (0.394-0.015j) & (-0.065+0.048j) & (0.038+0.005j)\\0.780 & (-0.033+0.026j) & (-0.033-0.026j) & 0.220\\\end{array}\right)\end{equation*}
+
+    
+
+    \subsubsection{try}\label{try}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}140}]:} \PY{n}{xi\PYZus{}opt} \PY{o}{=} \PY{n}{terminator}\PY{p}{(}\PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4}\PY{p}{,}\PY{n}{time\PYZus{}steps}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{times}\PY{p}{)}\PY{p}{,} \PY{n}{total\PYZus{}time}\PY{o}{=} \PY{n}{total\PYZus{}time\PYZus{}evo}\PY{p}{,}
+                         \PY{n}{epsilon}\PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}141}]:} \PY{n}{dt} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{500}
+          \PY{n}{F}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}141}]:} -0.9547563688866646
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}142}]:} \PY{n}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}142}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.220 & (0.035-0.027j) & (0.035+0.027j) & 0.780\\(-0.038+0.005j) & (-0.064-0.048j) & (0.394+0.012j) & (0.038-0.005j)\\(-0.038-0.005j) & (0.394-0.012j) & (-0.064+0.048j) & (0.038+0.005j)\\0.780 & (-0.035+0.027j) & (-0.035-0.027j) & 0.220\\\end{array}\right)\end{equation*}
+
+    
+
+    \subsubsection{try}\label{try}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}143}]:} \PY{n}{xi\PYZus{}opt} \PY{o}{=} \PY{n}{terminator}\PY{p}{(}\PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4}\PY{p}{,}\PY{n}{time\PYZus{}steps}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{times}\PY{p}{)}\PY{p}{,} \PY{n}{total\PYZus{}time}\PY{o}{=} \PY{n}{total\PYZus{}time\PYZus{}evo}\PY{p}{,}
+                         \PY{n}{epsilon}\PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}144}]:} \PY{n}{dt} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{500}
+          \PY{n}{F}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}144}]:} -0.9547464377063413
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}145}]:} \PY{n}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}145}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.220 & (0.035-0.027j) & (0.035+0.027j) & 0.780\\(-0.038+0.005j) & (-0.064-0.048j) & (0.394+0.012j) & (0.038-0.005j)\\(-0.038-0.005j) & (0.394-0.012j) & (-0.064+0.048j) & (0.038+0.005j)\\0.780 & (-0.035+0.027j) & (-0.035-0.027j) & 0.220\\\end{array}\right)\end{equation*}
+
+    
+
+    \subsubsection{try}\label{try}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}146}]:} \PY{n}{xi\PYZus{}opt} \PY{o}{=} \PY{n}{terminator}\PY{p}{(}\PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4}\PY{p}{,}\PY{n}{time\PYZus{}steps}\PY{o}{=}\PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{total\PYZus{}time}\PY{o}{=} \PY{n}{total\PYZus{}time\PYZus{}evo}\PY{p}{,}
+                         \PY{n}{epsilon}\PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}147}]:} \PY{n}{dt} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{3}\PY{p}{)}\PY{c+c1}{\PYZsh{}(2*pi)/500}
+          \PY{n}{F}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}147}]:} -4.865356728657208
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}148}]:} \PY{n}{L\PYZus{}full\PYZus{}maker}\PY{p}{(}\PY{n}{xi\PYZus{}opt}\PY{p}{,} \PY{n}{dt}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}148}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = False\begin{equation*}\left(\begin{array}{*{11}c}0.756 & (-0.333-0.089j) & (-0.333+0.089j) & 0.244\\(-0.257+0.072j) & (-0.401+0.138j) & (0.147-0.054j) & (0.257-0.072j)\\(-0.257-0.072j) & (0.147+0.054j) & (-0.401-0.138j) & (0.257+0.072j)\\0.244 & (0.333+0.089j) & (0.333-0.089j) & 0.756\\\end{array}\right)\end{equation*}
+
+    
+
+    \subsection{Versions}\label{versions}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}119}]:} \PY{k+kn}{from} \PY{n+nn}{qutip}\PY{n+nn}{.}\PY{n+nn}{ipynbtools} \PY{k}{import} \PY{n}{version\PYZus{}table}
+          
+          \PY{n}{version\PYZus{}table}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}119}]:} <IPython.core.display.HTML object>
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}120}]:} \PY{n}{cnot}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}120}]:}
+    
+    Quantum object: dims = [[2, 2], [2, 2]], shape = (4, 4), type = oper, isherm = True\begin{equation*}\left(\begin{array}{*{11}c}1.0 & 0.0 & 0.0 & 0.0\\0.0 & 1.0 & 0.0 & 0.0\\0.0 & 0.0 & 0.0 & 1.0\\0.0 & 0.0 & 1.0 & 0.0\\\end{array}\right)\end{equation*}
 
     
 
