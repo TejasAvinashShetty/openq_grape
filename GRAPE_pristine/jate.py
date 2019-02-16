@@ -33,13 +33,22 @@ from qutip.operators import spin_Jm, spin_Jp, spin_J_set
 
 from qutip.operators import squeeze, squeezing, displace
 from qutip.operators import qutrit_ops, qdiags
+
+from qutip.mesolve import mesolve, odesolve
+
+from qutip.control.grape import plot_grape_control_fields, _overlap 
+from qutip.control.grape import grape_unitary_adaptive, cy_grape_unitary
+from qutip.ui.progressbar import TextProgressBar
+from qutip.ipynbtools import version_table
 #from qutip.operators import phase, zero_oper, enr_destroy, enr_identity
+
+
 
 
 # ## Qutip imports 2
 
 # In[3]:
-
+from qutip.metrics import fidelity
 
 #from 
 
@@ -58,8 +67,10 @@ from numpy import trace, diag
 from numpy import ones, zeros, ones_like, zeros_like
 from numpy import amax, amin, nanmax, nanmin
 from numpy import outer, multiply
-# from numpy import pi
+from numpy import convolve, clip
+from numpy import vectorize
 
+# from numpy import pi
 
 # ## Scipy imports
 
@@ -72,7 +83,7 @@ from scipy.linalg import eigh, inv, norm
 from scipy.linalg import logm, expm
 # from scipy.linalg import 
 # from scipy import
-
+from scipy.interpolate import interp1d
 
 # ## Matplotlib imports
 
@@ -136,6 +147,8 @@ from sympy import Function, dsolve, Eq, Derivative, symbols
 
 
 # ## Miscellaneous imports
+import time
+
 
 # ## Extra useful functions
 
