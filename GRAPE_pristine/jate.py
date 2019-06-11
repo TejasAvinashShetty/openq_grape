@@ -69,6 +69,7 @@ from numpy import amax, amin, nanmax, nanmin
 from numpy import outer, multiply
 from numpy import convolve, clip
 from numpy import vectorize
+from numpy import copy
 
 # from numpy import pi
 
@@ -148,7 +149,7 @@ from sympy import Function, dsolve, Eq, Derivative, symbols
 
 # ## Miscellaneous imports
 import time
-
+from tqdm import tqdm
 
 # ## Extra useful functions
 
